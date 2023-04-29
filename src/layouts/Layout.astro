@@ -1,35 +1,61 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 export interface Props {
-	title: string;
+  title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+import logo from "../images/bioinfoclass_logo.png";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-slate-100 px-10">
+    <nav class="flex items-center justify-between p-5">
+      <a href="/">
+        <Image
+          class="ml-10 hover:cursor-pointer hover:opacity-70"
+          src={logo}
+          alt="BioinfoClass"
+          width={80}
+          height={80}
+        />
+      </a>
+      <div class="mr-20 flex gap-10 text-lg">
+        <a
+          class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
+          href="/">Home</a
+        >
+        <a
+          class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
+          href="/sobre">Sobre</a
+        >
+        <a
+          class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
+          href="/blog">Blog</a
+        >
+        <a
+          class="rounded-md border border-blue-300 p-2 text-blue-600 transition-colors duration-500 hover:bg-blue-500 hover:text-white"
+          href="/contato">Entre em Contato!</a
+        >
+      </div>
+    </nav>
+    <slot />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
