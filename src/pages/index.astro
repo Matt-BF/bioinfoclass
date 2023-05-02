@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { Image } from "@astrojs/image/components";
 import hero from "../images/bioinfo_hero.jpg";
+import matt from "../images/matt.webp";
 ---
 
 <Layout
@@ -16,7 +17,7 @@ import hero from "../images/bioinfo_hero.jpg";
     >
       <div class="flex flex-col items-center justify-center">
         <h1 class="mb-10 text-center text-5xl text-white">
-          Aprenda <span class="text-5xl text-blue-400">Bioinformática</span><br
+          Aprenda <span class="text-5xl text-blue-300">Bioinformática</span><br
           />
           e analise seus dados biológicos com confiança
         </h1>
@@ -26,8 +27,8 @@ import hero from "../images/bioinfo_hero.jpg";
       </div>
     </section>
     <!-- Attributes section -->
-    <section>
-      <h2 class="mt-10 text-center text-4xl">
+    <section class="mt-10">
+      <h2 class="text-center text-4xl">
         Por que a <span class="text-blue-500">BioinfoClass</span>?
       </h2>
       <div class="mx-5 mt-10 grid gap-32 md:mx-64 md:grid-cols-2">
@@ -61,5 +62,60 @@ import hero from "../images/bioinfo_hero.jpg";
       </div>
     </section>
     <!-- Instructor section -->
+    <section class="mt-10 bg-teal-900">
+      <h2 class="py-10 text-center text-4xl text-amber-600">
+        Um pouco sobre nós
+      </h2>
+      <div class="mx-10 mt-10 grid grid-cols-2 items-center justify-center">
+        <Image src={matt} alt="Matt" height={480} width={360} />
+
+        <p class="rounded-lg bg-amber-500 p-5 text-white">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Exercitationem sunt repudiandae voluptate, magnam rerum placeat.
+          Nesciunt ipsum dolores, accusamus repudiandae similique suscipit quos
+          ab atque. Alias deleniti ipsam atque praesentium! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Earum, corporis reiciendis
+          commodi distinctio doloremque est quibusdam accusantium, voluptas
+          quidem impedit dolor nostrum, temporibus quasi illum. Minus illum ea
+          harum quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Error praesentium in aperiam facere! Dolorem ipsa impedit rerum magni
+          eum, corporis delectus accusamus excepturi obcaecati voluptatibus illo
+          adipisci porro necessitatibus iste.
+        </p>
+      </div>
+    </section>
+
+    <!-- Testimonials when we have them -->
+    <!-- Newsletter -->
+    <section class="mt-10">
+      <h2 class="text-center text-4xl">
+        Se inscreva na nossa <span class="text-blue-500">Newsletter</span>!
+      </h2>
+      <div class="ml-embedded" data-form="VFW3JH"></div>
+    </section>
   </main>
 </Layout>
+
+<!-- MailerLite Universal -->
+<script>
+  (function (w, d, e, u, f, l, n) {
+    (w[f] =
+      w[f] ||
+      function () {
+        (w[f].q = w[f].q || []).push(arguments);
+      }),
+      (l = d.createElement(e)),
+      (l.async = 1),
+      (l.src = u),
+      (n = d.getElementsByTagName(e)[0]),
+      n.parentNode.insertBefore(l, n);
+  })(
+    window,
+    document,
+    "script",
+    "https://assets.mailerlite.com/js/universal.js",
+    "ml"
+  );
+  ml("account", "418968");
+</script>
+<!-- End MailerLite Universal -->
