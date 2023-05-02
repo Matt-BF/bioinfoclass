@@ -33,7 +33,10 @@ import logo from "../images/bioinfoclass_logo.png";
     ></script>
   </head>
   <body class="bg-slate-100">
-    <nav class="mx-5 mb-10 flex items-center justify-between p-5">
+    <nav
+      id="header"
+      class="sticky left-0 right-0 top-0 z-40 mx-5 mb-10 flex flex-wrap items-center justify-between gap-4 p-5 transition-all duration-300 ease-in-out"
+    >
       <a href="/">
         <Image
           class="ml-10 hover:cursor-pointer hover:opacity-70"
@@ -69,3 +72,38 @@ import logo from "../images/bioinfoclass_logo.png";
     <slot />
   </body>
 </html>
+
+<script>
+  // Hide and Show Desktop Header //
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos === 0) {
+      document.getElementById("header").style.opacity = "1";
+    } else if (prevScrollpos > currentScrollPos) {
+      document.getElementById("header").style.opacity = "1";
+    } else {
+      document.getElementById("header").style.opacity = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+
+<script>
+  const navLinks = document.querySelectorAll("nav a");
+
+  navLinks.forEach((link) => {
+    link.classList.remove("text-blue-500");
+
+    // `slice` here to remove the first `/` in pathname
+    const currentPath = window.location.pathname.slice("1");
+
+    // `link.href` returns a whole url, such as: "https://somedomain.com/posts" and we only need the last part
+    const hrefArray = link.href.split("/");
+    const thisPath = hrefArray[hrefArray.length - 1];
+
+    if (currentPath === thisPath && currentPath !== "") {
+      link.classList.add("text-blue-500");
+    }
+  });
+</script>
