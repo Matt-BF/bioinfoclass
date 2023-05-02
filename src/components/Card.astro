@@ -1,21 +1,17 @@
 ---
+import { Icon } from "astro-icon";
+
 export interface Props {
-  title: string;
-  body: string;
-  href: string;
+  icon: string;
+  extraTwClasses?: string;
 }
 
-const { href, title, body } = Astro.props;
+const { icon, extraTwClasses } = Astro.props;
 ---
 
-<li class="link-card">
-  <a href={href}>
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
-  </a>
-</li>
+<div
+  class={`flex flex-col items-center  border-purple-800 shadow-lg shadow-purple-800 rounded-lg p-5 ${extraTwClasses}`}
+>
+  <Icon class="mb-5 w-20 text-purple-800" name={icon} />
+  <slot />
+</div>
