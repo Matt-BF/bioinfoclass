@@ -4,6 +4,7 @@ import Card from "../components/Card.astro";
 import { Image } from "@astrojs/image/components";
 import hero from "../images/bioinfo_hero.jpg";
 import matt from "../images/matt.webp";
+import { Icon } from "astro-icon";
 ---
 
 <Layout
@@ -81,19 +82,27 @@ import matt from "../images/matt.webp";
           width={270}
         />
 
-        <div class="w-3/4 rounded-lg bg-amber-500 p-5 text-white md:mr-10">
-          <p>
+        <div class="flex w-3/4 flex-col gap-5 text-white md:mr-10">
+          <p class="rounded-lg bg-amber-400 p-5">
             Muito prazer, sou Mateus Fiamenghi (Matt)! Sou doutorando da UNICAMP
             em Genética e Biologia Molecular e trabalho com bioinformática desde
-            2016 e desde então fiquei fascinado e apaixonado pela área. Aprendi
+            2016. Desde então fiquei fascinado e apaixonado pela área! Aprendi
             por conta a programar em Python e JavaScript e busco sempre me
-            aprimorar em novas facetas do mundo da programação.
+            aprimorar em novas facetas do mundo da programação. Comecei a
+            BioinfoClass para compartilhar meu conhecimento e ajudar biólogos
+            que também vieram da bancada como eu a entenderem melhor o mundo da
+            bioinfo.
           </p>
-          <p>
-            Meu trabalho na bioinfo durante o doutorado envolveu diversas
-            análises evolutivas e de machine learning, e agora quero
-            compartilhar meu aprendizado durante todos esses anos com vocês!
-          </p>
+          <div class="flex gap-5">
+            <Icon
+              name="mdi:school-outline"
+              class="w-12 rounded-full bg-amber-400 p-2 hover:bg-blue-500"
+            />
+            <Icon
+              name="mdi:linkedin"
+              class="w-12 rounded-full bg-amber-400 p-2 hover:bg-blue-500"
+            />
+          </div>
         </div>
       </div>
     </section>

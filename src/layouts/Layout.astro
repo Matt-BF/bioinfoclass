@@ -70,6 +70,53 @@ import logo from "../images/bioinfoclass_logo.png";
       </div>
     </nav>
     <slot />
+
+    <!-- Footer -->
+    <div
+      class="lg:pl-auto mt-auto grid gap-3 bg-teal-900 py-8 text-white md:grid-cols-2 md:pl-20"
+    >
+      <div class="mx-auto flex flex-col items-start gap-10">
+        <div class="flex items-center gap-4">
+          <p>Email</p>
+          <p>mateus.bioinfoclass@gmail.com</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <p>Instagram</p>
+          <p>@bioinfoclass</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <p>LinkedIn</p>
+          <a href="https://linkedin.com/company/bioinfoclass"
+            >https://linkedin.com/company/bioinfoclass</a
+          >
+        </div>
+      </div>
+      <div class="ml-10 mt-5 flex flex-col gap-2 md:mt-0">
+        <h2 class="text-lg">Páginas</h2>
+        <a
+          class="border-b-2 border-b-transparent hover:border-b-teal-900"
+          href="/sobre">Sobre</a
+        >
+        <a
+          class="border-b-2 border-b-transparent hover:border-b-teal-900"
+          href="#">Cursos</a
+        >
+        <a
+          class="border-b-2 border-b-transparent hover:border-b-teal-900"
+          href="/pd">p&d</a
+        >
+        <a
+          class="border-b-2 border-b-transparent hover:border-b-teal-900"
+          href="/blog">Blog</a
+        >
+        <a
+          class="border-b-2 border-b-transparent hover:border-b-teal-900"
+          href="/contato">Contato</a
+        >
+
+        <div class="w-3/4 lg:w-1/2"></div>
+      </div>
+    </div>
   </body>
 </html>
 
