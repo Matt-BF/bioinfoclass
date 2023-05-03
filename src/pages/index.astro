@@ -62,26 +62,39 @@ import matt from "../images/matt.webp";
       </div>
     </section>
     <!-- Instructor section -->
-    <section class="mt-10 bg-teal-900">
-      <h2 class="py-10 text-center text-4xl text-amber-600">
-        Um pouco sobre nós
+    <section class="relative mt-10 bg-teal-900">
+      <div
+        class="md:absolute md:left-0 md:top-0 md:h-full md:w-1/2 md:rounded-tr-full md:border-r-8 md:border-purple-900 md:bg-slate-100 md:bg-[url('src/images/bioinfoclass_logo.png')] md:bg-cover md:bg-no-repeat lg:w-1/3"
+      >
+      </div>
+      <h2 class="py-5 text-center text-4xl text-amber-400">
+        Um pouco sobre a BioinfoClass
       </h2>
-      <div class="mx-10 mt-10 grid grid-cols-2 items-center justify-center">
-        <Image src={matt} alt="Matt" height={480} width={360} />
+      <div
+        class="mt-10 flex flex-col items-center justify-center gap-5 pb-10 md:grid md:grid-cols-2"
+      >
+        <Image
+          src={matt}
+          alt="Matt"
+          class="z-40 ml-10 rounded-full bg-white bg-[url('/src/images/bioinfoclass_logo.png')] bg-contain bg-no-repeat md:border-none md:bg-transparent md:bg-none"
+          height={360}
+          width={270}
+        />
 
-        <p class="rounded-lg bg-amber-500 p-5 text-white">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Exercitationem sunt repudiandae voluptate, magnam rerum placeat.
-          Nesciunt ipsum dolores, accusamus repudiandae similique suscipit quos
-          ab atque. Alias deleniti ipsam atque praesentium! Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Earum, corporis reiciendis
-          commodi distinctio doloremque est quibusdam accusantium, voluptas
-          quidem impedit dolor nostrum, temporibus quasi illum. Minus illum ea
-          harum quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Error praesentium in aperiam facere! Dolorem ipsa impedit rerum magni
-          eum, corporis delectus accusamus excepturi obcaecati voluptatibus illo
-          adipisci porro necessitatibus iste.
-        </p>
+        <div class="w-3/4 rounded-lg bg-amber-500 p-5 text-white md:mr-10">
+          <p>
+            Muito prazer, sou Mateus Fiamenghi (Matt)! Sou doutorando da UNICAMP
+            em Genética e Biologia Molecular e trabalho com bioinformática desde
+            2016 e desde então fiquei fascinado e apaixonado pela área. Aprendi
+            por conta a programar em Python e JavaScript e busco sempre me
+            aprimorar em novas facetas do mundo da programação.
+          </p>
+          <p>
+            Meu trabalho na bioinfo durante o doutorado envolveu diversas
+            análises evolutivas e de machine learning, e agora quero
+            compartilhar meu aprendizado durante todos esses anos com vocês!
+          </p>
+        </div>
       </div>
     </section>
 
