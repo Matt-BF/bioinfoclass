@@ -8,6 +8,7 @@ export interface Props {
 
 const { title, description } = Astro.props;
 import logo from "../images/bioinfoclass_logo.png";
+import { Icon } from "astro-icon";
 ---
 
 <!DOCTYPE html>
@@ -35,25 +36,21 @@ import logo from "../images/bioinfoclass_logo.png";
   <body class="bg-slate-100">
     <nav
       id="header"
-      class="sticky left-0 right-0 top-0 z-50 mb-10 flex flex-wrap items-center justify-center gap-4 bg-slate-100 p-5 transition-all duration-300 ease-in-out md:justify-between"
+      class="sticky left-0 right-0 top-0 z-50 mb-10 flex flex-wrap items-center justify-center gap-4 bg-slate-100 p-5 transition-all duration-300 ease-in-out md:grid md:grid-cols-[1fr_3fr_1fr] md:justify-around"
     >
-      <a href="/">
+      <a class="flex justify-center" href="/">
         <Image
-          class="ml-10 hover:cursor-pointer hover:opacity-70"
+          class="hover:cursor-pointer hover:opacity-70"
           src={logo}
           alt="BioinfoClass"
           width={80}
           height={80}
         />
       </a>
-      <div class="mr-20 flex gap-10 text-lg">
+      <div class="flex items-center justify-center gap-10 text-lg">
         <a
           class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
           href="/">Home</a
-        >
-        <a
-          class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
-          href="/sobre">Sobre</a
         >
         <a
           class="disabled relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
@@ -67,6 +64,28 @@ import logo from "../images/bioinfoclass_logo.png";
           class="rounded-md border border-blue-300 p-2 text-blue-600 transition-colors duration-500 hover:bg-blue-500 hover:text-white"
           href="/contato">Entre em Contato!</a
         >
+      </div>
+      <div class="flex gap-2">
+        <Icon
+          name="mdi:instagram"
+          class="w-8 text-blue-600 hover:text-blue-400"
+        />
+        <Icon
+          name="mdi:linkedin"
+          class="w-8 text-blue-600 hover:text-blue-400"
+        />
+        <Icon
+          name="mdi:facebook"
+          class="w-8 text-blue-600 hover:text-blue-400"
+        />
+        <Icon
+          name="mdi:youtube"
+          class="w-8 text-blue-600 hover:text-blue-400"
+        />
+        <Icon
+          name="mdi:email-outline"
+          class="w-8 text-blue-600 hover:text-blue-400"
+        />
       </div>
     </nav>
     <slot />
@@ -95,16 +114,9 @@ import logo from "../images/bioinfoclass_logo.png";
         <h2 class="text-lg">Páginas</h2>
         <a
           class="border-b-2 border-b-transparent hover:border-b-teal-900"
-          href="/sobre">Sobre</a
-        >
-        <a
-          class="border-b-2 border-b-transparent hover:border-b-teal-900"
           href="#">Cursos</a
         >
-        <a
-          class="border-b-2 border-b-transparent hover:border-b-teal-900"
-          href="/pd">p&d</a
-        >
+
         <a
           class="border-b-2 border-b-transparent hover:border-b-teal-900"
           href="/blog">Blog</a

@@ -22,18 +22,56 @@ import { Icon } from "astro-icon";
           />
           e analise seus dados biológicos com confiança
         </h1>
-        <button class="rounded-xl bg-blue-500 p-4 text-white hover:bg-blue-400"
-          >Mais informações</button
-        >
+        <div class="flex justify-center gap-5">
+          <button
+            class="rounded-xl bg-blue-500 p-4 text-white hover:bg-blue-400"
+            >Quero aprender!</button
+          >
+          <button
+            class="rounded-xl bg-blue-500 p-4 text-white hover:bg-blue-400"
+            >Conversar com a equipe</button
+          >
+        </div>
       </div>
     </section>
-    <!-- Attributes section -->
-    <section class="mt-10">
+
+    <!-- Services section -->
+    <section class="py-10">
       <h2 class="text-center text-4xl">
+        O que <span class="text-blue-500">oferecemos</span>?
+      </h2>
+      <div class="mx-5 mt-10 grid gap-32 md:mx-32 md:grid-cols-3">
+        <Card icon="ic:outline-slow-motion-video">
+          <h3 class="text-center text-lg">
+            Conteúdo, videoaulas e tutoriais <span class="text-blue-500"
+              >totalmente grátis</span
+            > em todas as nossas redes
+          </h3>
+        </Card>
+        <Card icon="ic:round-workspace-premium">
+          <h3 class="text-center text-lg">
+            Cursos de programação e bioinformática com emissão de <span
+              class="text-blue-500"
+              >certificado
+            </span> de conclusão
+          </h3>
+        </Card>
+        <Card icon="mdi:teach-poll">
+          <h3 class="text-center text-lg">
+            Consultorias e aulas<span class="text-blue-500"> particulares</span>
+            de programação e bioinformática
+          </h3>
+        </Card>
+      </div>
+    </section>
+
+    <!-- Attributes section -->
+    <section class="mt-10 pb-10">
+      <h2 class="pt-10 text-center text-4xl">
         Por que a <span class="text-blue-500">BioinfoClass</span>?
       </h2>
-      <div class="mx-5 mt-10 grid gap-32 md:mx-64 md:grid-cols-2">
-        <Card icon="ic:round-workspace-premium">
+      <div class="mx-5 mt-10 grid gap-28 md:mx-64 md:grid-cols-2">
+        <Card icon="eos-icons:data-scientist">
           <h3 class="text-center text-lg">
             Aprenda com quem trabalha <span class="text-blue-500"
               >diariamente</span
@@ -47,7 +85,7 @@ import { Icon } from "astro-icon";
             </span> da bancada
           </h3>
         </Card>
-        <Card icon="mdi:teach-poll">
+        <Card icon="mdi:update">
           <h3 class="text-center text-lg">
             Fique sempre atualizado com o <span class="text-blue-500"
               >estado da arte
@@ -62,6 +100,7 @@ import { Icon } from "astro-icon";
         </Card>
       </div>
     </section>
+
     <!-- Instructor section -->
     <section class="relative mt-10 bg-teal-900">
       <div
