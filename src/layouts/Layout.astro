@@ -65,26 +65,46 @@ import { Icon } from "astro-icon";
         >
       </div>
       <div class="flex justify-center gap-2">
-        <Icon
-          name="mdi:instagram"
-          class="w-8 text-blue-600 hover:text-blue-400"
-        />
-        <Icon
-          name="mdi:linkedin"
-          class="w-8 text-blue-600 hover:text-blue-400"
-        />
-        <Icon
-          name="mdi:facebook"
-          class="w-8 text-blue-600 hover:text-blue-400"
-        />
+        <a
+          href="https://www.instagram.com/bioinfoclass/"
+          target="_blank"
+          rel="noopener"
+        >
+          <Icon
+            name="mdi:instagram"
+            class="w-8 text-blue-600 hover:text-blue-400"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/bioinfoclass"
+          target="_blank"
+          rel="noopener"
+        >
+          <Icon
+            name="mdi:linkedin"
+            class="w-8 text-blue-600 hover:text-blue-400"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=100092001289240"
+          target="_blank"
+          rel="noopener"
+        >
+          <Icon
+            name="mdi:facebook"
+            class="w-8 text-blue-600 hover:text-blue-400"
+          />
+        </a>
         <Icon
           name="mdi:youtube"
           class="w-8 text-blue-600 hover:text-blue-400"
         />
-        <Icon
-          name="mdi:email-outline"
-          class="w-8 text-blue-600 hover:text-blue-400"
-        />
+        <a href="mailto:mbfiamenghi@gmail.com" target="_blank" rel="noopener">
+          <Icon
+            name="mdi:email-outline"
+            class="w-8 text-blue-600 hover:text-blue-400"
+          />
+        </a>
       </div>
     </nav>
     <slot />
@@ -93,22 +113,6 @@ import { Icon } from "astro-icon";
     <div
       class="lg:pl-auto mt-auto grid gap-3 bg-teal-900 py-8 text-white md:grid-cols-2 md:pl-20"
     >
-      <div class="mx-auto flex flex-col items-start gap-10">
-        <div class="flex items-center gap-4">
-          <p>Email</p>
-          <p>mateus.bioinfoclass@gmail.com</p>
-        </div>
-        <div class="flex items-center gap-4">
-          <p>Instagram</p>
-          <p>@bioinfoclass</p>
-        </div>
-        <div class="flex items-center gap-4">
-          <p>LinkedIn</p>
-          <a href="https://linkedin.com/company/bioinfoclass"
-            >https://linkedin.com/company/bioinfoclass</a
-          >
-        </div>
-      </div>
       <div class="ml-10 mt-5 flex flex-col gap-2 md:mt-0">
         <h2 class="text-lg">Páginas</h2>
         <a
@@ -122,7 +126,7 @@ import { Icon } from "astro-icon";
         >
         <a
           class="border-b-2 border-b-transparent hover:border-b-teal-900"
-          href="/contato">Contato</a
+          href="mailto:mbfiamenghi@gmail.com">Contato</a
         >
 
         <div class="w-3/4 lg:w-1/2"></div>
