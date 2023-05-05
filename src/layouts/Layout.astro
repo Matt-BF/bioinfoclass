@@ -33,10 +33,10 @@ import { Icon } from "astro-icon";
       async
     ></script>
   </head>
-  <body class="bg-slate-100">
+  <body class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-slate-100">
     <nav
       id="header"
-      class="sticky left-0 right-0 top-0 z-50 mb-10 flex flex-wrap items-center justify-center gap-4 bg-slate-100 p-5 transition-all duration-300 ease-in-out md:grid md:grid-cols-[1fr_3fr_1fr] md:justify-around"
+      class="sticky left-0 right-0 top-0 z-50 grid grid-rows-3 items-center justify-center bg-slate-100 p-5 transition-all duration-300 ease-in-out md:grid-cols-[1fr_3fr_1fr] md:grid-rows-1 md:justify-around"
     >
       <a class="flex justify-center" href="/">
         <Image
@@ -47,14 +47,13 @@ import { Icon } from "astro-icon";
           height={80}
         />
       </a>
-      <div class="flex items-center justify-center gap-10 text-lg">
+      <div class="flex flex-wrap justify-center gap-10 text-lg">
         <a
           class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
           href="/">Home</a
         >
-        <a
-          class="disabled relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
-          href="#">Cursos <span class="text-xs">(em breve!)</span></a
+        <a class="cursor-default p-2 text-center text-slate-500" href="#"
+          >Cursos</a
         >
         <a
           class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
@@ -65,7 +64,7 @@ import { Icon } from "astro-icon";
           href="/contato">Entre em Contato!</a
         >
       </div>
-      <div class="flex gap-2">
+      <div class="flex justify-center gap-2">
         <Icon
           name="mdi:instagram"
           class="w-8 text-blue-600 hover:text-blue-400"

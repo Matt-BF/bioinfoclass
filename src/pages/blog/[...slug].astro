@@ -1,6 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon";
+import SocialSharing from "../../components/SocialSharing.astro";
+import Newsletter from "../../components/Newsletter.astro";
+
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -15,11 +19,31 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <a class="ml-20" href="/blog">Voltar</a>
-  <div class="flex flex-col items-center justify-center">
-    <h1 class="mb-10 text-3xl">{entry.data.title}</h1>
-    <div class="prose">
+  <a
+    class="mb-10 flex w-24 items-center gap-2 rounded-md border border-slate-200 p-2 text-center hover:bg-slate-200 md:ml-40"
+    href="/blog"
+    ><span>
+      <Icon class="w-5" name="mdi:arrow-left-thin-circle-outline" />
+    </span>Voltar
+  </a>
+  <article class="flex flex-col items-center justify-center">
+    <h1 class="my-10 text-3xl">{entry.data.title}</h1>
+    <SocialSharing />
+    <hr class="mx-auto mb-5 w-1/2" />
+    <img
+      src={`${entry.data.heroImage}`}
+      alt={`Hero image for ${entry.data.title}`}
+      width={800}
+      height={500}
+    />
+
+    <div
+      class="prose mx-5 mb-10 text-justify first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 prose-headings:text-blue-600"
+    >
       <Content />
     </div>
-  </div>
+    <SocialSharing />
+  </article>
+  <hr class="mx-auto my-5 w-1/2" />
+  <Newsletter />
 </Layout>

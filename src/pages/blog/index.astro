@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "@astrojs/image/components";
 import Layout from "../../layouts/Layout.astro";
 const blogEntries = await getCollection("blog");
 ---
@@ -9,19 +10,29 @@ const blogEntries = await getCollection("blog");
   description="Confira nossos posts, dicas e conteúdo"
 >
   <main>
-    <h1 class="mb-20 text-3xl">Confira nosso blog!</h1>
-    <ul class="ml-20 flex">
+    <h1 class="mb-20 mt-10 text-center text-3xl">
+      Confira nosso <span class="text-blue-600">blog</span>!
+    </h1>
+    <ul class="mx-10 mb-20 flex md:ml-20">
       {
         blogEntries.map((blogPostEntry) => (
-          <li class="flex flex-col rounded-md border p-5">
-            <a
-              class="text-lg text-blue-600"
-              href={`/blog/${blogPostEntry.slug}`}
-            >
-              {blogPostEntry.data.title}
+          <li class="flex flex-col rounded-md border shadow-md hover:border-blue-600">
+            <a href={`/blog/${blogPostEntry.slug}`}>
+              <img
+                src={blogPostEntry.data.heroImage}
+                alt={`Hero image for ${blogPostEntry.data.title}`}
+                class="mb-5 h-48 w-full rounded-md"
+              />
+              <h3 class="ml-2 text-lg text-blue-600">
+                {blogPostEntry.data.title}
+              </h3>
             </a>
-            <time datetime={blogPostEntry.data.publishedAt.toISOString()}>
-              {blogPostEntry.data.publishedAt.toDateString()}
+            <time
+              class="mb-2 px-2 text-right text-sm"
+              datetime={blogPostEntry.data.publishedAt.toISOString()}
+            >
+              <span>Publicado em </span>{" "}
+              {blogPostEntry.data.publishedAt.toLocaleDateString("pt-BR")}
             </time>
           </li>
         ))

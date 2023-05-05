@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div class="flex">
+  <!-- Sharingbutton Facebook -->
+  <a
+    class="bg-blue-500 px-5 py-2"
+    href={`https://facebook.com/sharer/sharer.php?u=${Astro.url}`}
+    target="_blank"
+    rel="noopener"
+    aria-label="Compartilhar no Facebook"
+  >
+    <Icon name="mdi:facebook" class="w-5 text-white" />
+  </a>
+
+  <!-- Sharingbutton E-Mail -->
+  <a
+    class="bg-slate-500 px-5 py-2"
+    href={`mailto:?subject=Veja este post do site da BioinfoClass!&body=${Astro.url}>${Astro.url}`}
+    target="_self"
+    rel="noopener"
+    aria-label="Compartilhar por E-Mail"
+  >
+    <Icon name="mdi:email-outline" class="w-5 text-white" />
+  </a>
+  <!-- Sharingbutton LinkedIn -->
+  <a
+    class="bg-blue-800 px-5 py-2"
+    href={`https://www.linkedin.com/shareArticle?mini=true&url=${Astro.url}&title=Confira este post do site da BioinfoClass!&source=${Astro.url}`}
+    target="_blank"
+    rel="noopener"
+    aria-label="Share on LinkedIn"
+  >
+    <Icon name="mdi:linkedin" class="w-5 text-white" />
+  </a>
+
+  <!-- Sharingbutton WhatsApp -->
+  <a
+    class="bg-green-500 px-5 py-2"
+    href={`whatsapp://send?text=Veja este post no site da BioinfoClass!${Astro.url}`}
+    target="_blank"
+    rel="noopener"
+    aria-label="Share on WhatsApp"
+  >
+    <Icon name="mdi:whatsapp" class="w-5 text-white" />
+  </a>
+</div>
