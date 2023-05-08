@@ -9,6 +9,8 @@ export interface Props {
 const { title, description } = Astro.props;
 import logo from "../images/bioinfoclass_logo.png";
 import { Icon } from "astro-icon";
+
+const date: string = new Date().getFullYear();
 ---
 
 <!DOCTYPE html>
@@ -99,7 +101,7 @@ import { Icon } from "astro-icon";
           name="mdi:youtube"
           class="w-8 text-blue-600 hover:text-blue-400"
         />
-        <a href="mailto:mbfiamenghi@gmail.com" target="_blank" rel="noopener">
+        <a href="mailto:mateus@bioinfoclass.com" target="_blank" rel="noopener">
           <Icon
             name="mdi:email-outline"
             class="w-8 text-blue-600 hover:text-blue-400"
@@ -110,27 +112,30 @@ import { Icon } from "astro-icon";
     <slot />
 
     <!-- Footer -->
-    <div
-      class="lg:pl-auto mt-auto grid gap-3 bg-teal-900 py-8 text-white md:grid-cols-2 md:pl-20"
-    >
-      <div class="ml-10 mt-5 flex flex-col gap-2 md:mt-0">
-        <h2 class="text-lg">Páginas</h2>
-        <a
-          class="border-b-2 border-b-transparent hover:border-b-teal-900"
-          href="#">Cursos</a
-        >
+    <div class="bg-teal-900 text-white">
+      <div class="lg:pl-auto mt-auto grid gap-3 py-8 md:grid-cols-2 md:pl-20">
+        <div class="ml-10 mt-5 flex flex-col gap-2 md:mt-0">
+          <h2 class="text-lg">Páginas</h2>
+          <a
+            class="border-b-2 border-b-transparent hover:border-b-teal-900"
+            href="#">Cursos</a
+          >
 
-        <a
-          class="border-b-2 border-b-transparent hover:border-b-teal-900"
-          href="/blog">Blog</a
-        >
-        <a
-          class="border-b-2 border-b-transparent hover:border-b-teal-900"
-          href="mailto:mbfiamenghi@gmail.com">Contato</a
-        >
+          <a
+            class="border-b-2 border-b-transparent hover:border-b-teal-900"
+            href="/blog">Blog</a
+          >
+          <a
+            class="border-b-2 border-b-transparent hover:border-b-teal-900"
+            href="mailto:mateus@bioinfoclass.com">Contato</a
+          >
 
-        <div class="w-3/4 lg:w-1/2"></div>
+          <div class="w-3/4 lg:w-1/2"></div>
+        </div>
       </div>
+      <p class="text-center text-sm text-white">
+        &#169; Copyright BioinfoClass {date}
+      </p>
     </div>
   </body>
 </html>
