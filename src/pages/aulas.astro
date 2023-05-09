@@ -1,6 +1,11 @@
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
+
+import matt from "../images/matt.webp";
+import Instructor from "../components/Instructor.astro";
+import { Icon } from "astro-icon";
+import ContactForm from "../components/ContactForm";
 ---
 
 <Layout
@@ -8,13 +13,13 @@ import Layout from "../layouts/Layout.astro";
   description="Aprenda bioinformática e programação com aulas particulares personalizadas na BioinfoClass. Professores experientes e metodologia eficiente para alunos de todos os níveis. Comece já sua jornada de aprendizado em análise de dados biológicos e programação!"
 >
   <main>
-    <section>
-      <h1 class="mb-20 mt-10 text-center text-3xl">
+    <section class="flex flex-col items-center justify-center">
+      <h1 class="mb-20 mt-5 text-center text-3xl">
         Aprenda no seu ritmo e de forma <span class="text-blue-500"
           >personalizada</span
         >
       </h1>
-      <p class="mb-10 p-5 text-center text-lg">
+      <p class="mx-10 mb-10 text-justify text-lg lg:w-1/2">
         Sabemos que cursos online e videoaulas podem não ser a melhor opção para
         todos. Acreditamos que cada um tem sua maneira própria de aprender e que
         o cuidado individual pode render muitos frutos para quem está iniciando
@@ -26,25 +31,100 @@ import Layout from "../layouts/Layout.astro";
         dado computacional para sua pesquisa.
       </p>
     </section>
-    <section class="mx-5 mt-10 grid gap-32 md:mx-32 md:grid-cols-3">
+    <section class="mx-5 mt-10 grid gap-32 lg:mx-32 lg:grid-cols-3">
       <Card icon="ic:outline-access-time">
-        <h3>
+        <h3 class="text-center">
           Aprenda no seu <span class="text-blue-500">ritmo</span> e apenas o que
           você necessita
         </h3>
       </Card>
-      <Card icon="ic:outline-access-time">
-        <h3>
-          Aprenda no seu <span class="text-blue-500">ritmo</span> e apenas o que
-          você necessita
+      <Card icon="mdi:attach-money">
+        <h3 class="text-center">
+          Preços <span class="text-blue-500">justos</span> e transparentes
         </h3>
       </Card>
-      <Card icon="ic:outline-access-time">
-        <h3>
-          Aprenda no seu <span class="text-blue-500">ritmo</span> e apenas o que
-          você necessita
+      <Card icon="mdi:graduation-cap">
+        <h3 class="text-center">
+          Instrutores <span class="text-blue-500">experientes</span>, altamente
+          qualificados e didáticos
         </h3>
       </Card>
+    </section>
+
+    <!-- Instructors -->
+    <section>
+      <h2 class="mt-20 text-center text-3xl">
+        Conheça alguns dos nossos <span class="text-blue-500">instrutores</span>
+      </h2>
+      <div class="mx-10 mt-10 grid gap-10 md:mx-24 lg:grid-cols-3">
+        <Instructor
+          name="Mateus"
+          image={matt}
+          specialties="Python, Genômica Comparativa, Machine Learning"
+          github="https://github.com/Matt-BF"
+          lattes="http://lattes.cnpq.br/9005713927447046"
+        />
+        <Instructor
+          name="Lucas"
+          image={matt}
+          specialties="R, Integração de ômicas, RNA-seq"
+          github="https://github.com/Matt-BF"
+          lattes="http://lattes.cnpq.br/9005713927447046"
+        />
+        <Instructor
+          name="Juliana"
+          image={matt}
+          specialties="Genômica Comparativa, Sequenciamento, Variant Calling"
+          github="https://github.com/Matt-BF"
+          lattes="http://lattes.cnpq.br/9005713927447046"
+        />
+      </div>
+    </section>
+    <!-- How does it work? -->
+    <section class="my-20">
+      <h2 class="text-center text-3xl">
+        Como <span class="text-blue-500">agendar</span> uma aula?
+      </h2>
+      <div class="mt-10 flex flex-col justify-center gap-16">
+        <div
+          class="mx-5 flex flex-col items-center gap-5 rounded-lg border border-purple-400 p-5 text-center lg:mx-auto lg:w-1/4"
+        >
+          <Icon
+            class="w-24 rounded-full bg-purple-400 p-5 text-white"
+            name="mdi:file-document-edit"
+          />Preencha o formulário com seu nome, email de contato, uma descrição
+          da sua experiência, disponibilidade de horários e o que você gostaria
+          de aprender
+        </div>
+
+        <div
+          class="mx-5 flex flex-col items-center gap-5 rounded-lg border border-purple-400 p-5 text-center lg:mx-auto lg:w-1/4"
+        >
+          <Icon
+            class="w-24 rounded-full bg-purple-400 p-5 text-white"
+            name="ic:outline-assignment-return"
+          />
+          Enviaremos um plano de estudos com tempo estimado, sugestão de instrutor
+          e investimento
+        </div>
+        <div
+          class="mx-5 flex flex-col items-center gap-5 rounded-lg border border-purple-400 p-5 text-center lg:mx-auto lg:w-1/4"
+        >
+          <Icon
+            class="w-24 rounded-full bg-purple-400 p-5 text-white"
+            name="mdi:calendar-check"
+          />Após o aceite das condições, enviaremos o link para aula e convites
+          na agenda
+        </div>
+      </div>
+    </section>
+    <section class="my-20">
+      <h2 class="mb-10 text-center text-3xl">
+        Quer aprender conosco? Preencha o <span class="text-blue-500"
+          >formulário</span
+        > de contato!
+      </h2>
+      <ContactForm client:load />
     </section>
   </main>
 </Layout>

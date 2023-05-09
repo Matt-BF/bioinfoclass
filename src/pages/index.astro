@@ -2,10 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { Image } from "@astrojs/image/components";
-import hero from "../images/bioinfo_hero.jpg";
 import matt from "../images/matt.webp";
 import { Icon } from "astro-icon";
-import Newsletter from "../components/Newsletter.astro";
+import NewsletterForm from "../components/NewsletterForm";
 ---
 
 <Layout
@@ -168,6 +167,11 @@ import Newsletter from "../components/Newsletter.astro";
 
     <!-- Testimonials when we have them -->
     <!-- Newsletter -->
-    <Newsletter />
+    <section class="my-10 flex flex-col items-center justify-center gap-5">
+      <h2 class="text-4xl">
+        Se inscreva na nossa <span class="text-blue-500">Newsletter</span>!
+      </h2>
+      <NewsletterForm client:load />
+    </section>
   </main>
 </Layout>
