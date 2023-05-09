@@ -11,52 +11,32 @@ import ContactForm from "../components/ContactForm";
 ---
 
 <Layout
-  title="BioinfoClass - Aulas particulares"
-  description="Aprenda bioinformática e programação com aulas particulares personalizadas na BioinfoClass. Professores experientes e metodologia eficiente para alunos de todos os níveis. Comece já sua jornada de aprendizado em análise de dados biológicos e programação!"
+  title="BioinfoClass - Consultoria"
+  description="Tenha todo o apoio dos nossos cientistas "
 >
   <main>
     <section class="flex flex-col items-center justify-center">
       <h1 class="mb-20 mt-5 text-center text-3xl">
-        Aprenda no seu ritmo e de forma <span class="text-blue-500"
-          >personalizada</span
+        Consultoria e orientação para <span class="text-blue-500"
+          >seu projeto</span
         >
       </h1>
       <p class="mx-10 mb-10 text-justify text-lg lg:w-1/2">
-        Sabemos que cursos online e videoaulas podem não ser a melhor opção para
-        todos. Acreditamos que cada um tem sua maneira própria de aprender e que
-        o cuidado individual pode render muitos frutos para quem está iniciando
-        na área de programação voltada à biologia. Por isso, oferecemos aulas
-        particulares de bioinformática e programação para alunos de todos os
-        níveis. Aprenda no seu ritmo e de forma personalizada com doutores ou
-        pós graduandos experientes de universidades públicas, seja seu interesse
-        aprender a programar do zero, ou aprender a interpretar um dado
-        computacional para sua pesquisa.
+        Muitas vezes começar uma nova linha de pesquisa ou trabalho em
+        bioinformática é bastante desafiador. Qual o melhor programa para rodar
+        certa análise? Quais os melhores parâmetros? Como interpretar os
+        resultados ou gerar as melhores figuras? A BioinfoClass oferece
+        consultoria e orientação para projetos de bioinformática, desde a
+        concepção do projeto até a análise de dados. Nossos instrutores são
+        cientistas com experiência em projetos de bioinformática e estão prontos
+        para te ajudar a tirar seu projeto do papel.
       </p>
-    </section>
-    <section class="mx-5 mt-10 grid gap-32 lg:mx-32 lg:grid-cols-3">
-      <Card icon="ic:outline-access-time">
-        <h3 class="text-center">
-          Aprenda no seu <span class="text-blue-500">ritmo</span> e apenas o que
-          você necessita
-        </h3>
-      </Card>
-      <Card icon="mdi:attach-money">
-        <h3 class="text-center">
-          Preços <span class="text-blue-500">justos</span> e transparentes
-        </h3>
-      </Card>
-      <Card icon="mdi:graduation-cap">
-        <h3 class="text-center">
-          Instrutores <span class="text-blue-500">experientes</span>, altamente
-          qualificados e didáticos
-        </h3>
-      </Card>
     </section>
 
     <!-- Instructors -->
     <section>
       <h2 class="mt-20 text-center text-3xl">
-        Conheça alguns dos nossos <span class="text-blue-500">instrutores</span>
+        Conheça alguns dos nossos <span class="text-blue-500">consultores</span>
       </h2>
       <div class="mx-10 mt-10 grid gap-10 md:mx-24 lg:grid-cols-2">
         <Instructor
@@ -76,16 +56,16 @@ import ContactForm from "../components/ContactForm";
         <Instructor
           name="Juliana"
           image={jujose}
-          specialties="Genômica Comparativa, Filogenômica, Variant Calling, RNA-Seq, Pipelines de automação, Bash"
-          github="https://github.com/julianajose"
-          lattes="http://lattes.cnpq.br/0160738837670103"
+          specialties="Genômica Comparativa, Sequenciamento, Variant Calling, RNA-Seq"
+          github="https://github.com/Matt-BF"
+          lattes="http://lattes.cnpq.br/9005713927447046"
         />
       </div>
     </section>
     <!-- How does it work? -->
     <section class="my-20">
       <h2 class="text-center text-3xl">
-        Como <span class="text-blue-500">agendar</span> uma aula?
+        Como funciona a <span class="text-blue-500">consultoria</span>?
       </h2>
       <div class="mt-10 flex flex-col justify-center gap-16">
         <div
@@ -94,9 +74,8 @@ import ContactForm from "../components/ContactForm";
           <Icon
             class="w-24 rounded-full bg-purple-400 p-5 text-white"
             name="mdi:file-document-edit"
-          />Preencha o formulário com seu nome, email de contato, uma descrição
-          da sua experiência, disponibilidade de horários e o que você gostaria
-          de aprender
+          />Preencha o formulário com seu nome, email de contato, e uma
+          descrição do que você precisa no seu projeto
         </div>
 
         <div
@@ -106,7 +85,7 @@ import ContactForm from "../components/ContactForm";
             class="w-24 rounded-full bg-purple-400 p-5 text-white"
             name="ic:outline-assignment-return"
           />
-          Enviaremos um plano de estudos com tempo estimado, sugestão de instrutor
+          Enviaremos um plano de consultoria com tempo estimado, sugestão de instrutor
           e investimento
         </div>
         <div
@@ -115,14 +94,14 @@ import ContactForm from "../components/ContactForm";
           <Icon
             class="w-24 rounded-full bg-purple-400 p-5 text-white"
             name="mdi:calendar-check"
-          />Após o aceite das condições, enviaremos o link para aula e convites
-          na agenda
+          />Após o aceite das condições, enviaremos o link para as reuniões e
+          convites na agenda
         </div>
       </div>
     </section>
     <section class="my-20">
       <h2 class="mb-10 text-center text-3xl">
-        Quer aprender conosco? Preencha o <span class="text-blue-500"
+        Quer ajuda no seu projeto? Preencha o <span class="text-blue-500"
           >formulário</span
         > de contato!
       </h2>

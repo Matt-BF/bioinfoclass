@@ -38,12 +38,17 @@ const { Content } = await entry.render();
     />
 
     <div
-      class="prose mx-5 mb-10 text-justify first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 prose-headings:text-blue-600"
+      class="prose mx-5 mb-10 mt-10 text-justify first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 prose-headings:text-blue-600"
     >
       <Content />
     </div>
     <SocialSharing />
   </article>
   <hr class="mx-auto my-5 w-1/2" />
-  <NewsletterForm />
+  <section class="my-10 flex flex-col items-center justify-center gap-5">
+    <h2 class="text-4xl">
+      Se inscreva na nossa <span class="text-blue-500">Newsletter</span>!
+    </h2>
+    <NewsletterForm client:load />
+  </section>
 </Layout>
