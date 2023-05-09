@@ -1,16 +1,16 @@
 ---
 import { Image } from "@astrojs/image/components";
+const { title, description } = Astro.props;
+import logo from "../images/bioinfoclass_logo.png";
+import { Icon } from "astro-icon";
+import DropdownMenu from "../components/DropdownMenu";
 
 export interface Props {
   title: string;
   description: string;
 }
 
-const { title, description } = Astro.props;
-import logo from "../images/bioinfoclass_logo.png";
-import { Icon } from "astro-icon";
-
-const date: string = new Date().getFullYear();
+const date = new Date().getFullYear();
 ---
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ const date: string = new Date().getFullYear();
   <body class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-slate-100">
     <nav
       id="header"
-      class="sticky left-0 right-0 top-0 z-50 grid grid-rows-3 items-center justify-center bg-slate-100 p-5 transition-all duration-300 ease-in-out md:grid-cols-[1fr_3fr_1fr] md:grid-rows-1 md:justify-around"
+      class="sticky left-0 right-0 top-0 z-50 flex flex-wrap items-center justify-center bg-slate-100 p-5 transition-all duration-300 ease-in-out md:grid md:grid-cols-[1fr_3fr_1fr] md:grid-rows-1 md:justify-around"
     >
       <a class="flex justify-center" href="/">
         <Image
@@ -49,14 +49,14 @@ const date: string = new Date().getFullYear();
           height={80}
         />
       </a>
-      <div class="flex flex-wrap justify-center gap-10 text-lg">
+      <div
+        class="mb-5 flex flex-wrap justify-center gap-2 text-lg md:mb-0 md:gap-10"
+      >
         <a
           class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
           href="/">Home</a
         >
-        <a class="cursor-default p-2 text-center text-slate-500" href="#"
-          >Cursos</a
-        >
+        <DropdownMenu client:load />
         <a
           class="relative p-2 transition-colors duration-300 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-top-left before:scale-x-0 before:bg-blue-500 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-blue-500 before:hover:scale-x-100"
           href="/blog">Blog</a
