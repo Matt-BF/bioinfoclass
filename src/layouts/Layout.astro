@@ -2,9 +2,9 @@
 import { Image } from "@astrojs/image/components";
 const { title, description } = Astro.props;
 import logo from "../images/bioinfoclass_logo.png";
-import { Icon } from "astro-icon";
 import DropdownMenu from "../components/DropdownMenu";
 import NewsletterForm from "../components/NewsletterForm";
+import Socials from "../components/Socials.astro";
 
 export interface Props {
   title: string;
@@ -67,52 +67,7 @@ const date = new Date().getFullYear();
           href="/contato">Entre em Contato!</a
         >
       </div>
-      <div class="flex justify-center gap-2">
-        <a
-          href="https://www.instagram.com/bioinfoclass/"
-          target="_blank"
-          rel="noopener"
-        >
-          <Icon
-            name="mdi:instagram"
-            class="w-8 text-blue-600 hover:text-blue-400"
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/bioinfoclass"
-          target="_blank"
-          rel="noopener"
-        >
-          <Icon
-            name="mdi:linkedin"
-            class="w-8 text-blue-600 hover:text-blue-400"
-          />
-        </a>
-        <a
-          href="https://www.facebook.com/profile.php?id=100092001289240"
-          target="_blank"
-          rel="noopener"
-        >
-          <Icon
-            name="mdi:facebook"
-            class="w-8 text-blue-600 hover:text-blue-400"
-          />
-        </a>
-        <Icon
-          name="mdi:youtube"
-          class="w-8 text-blue-600 hover:text-blue-400"
-        />
-        <a
-          href="mailto:contato@bioinfoclass.com"
-          target="_blank"
-          rel="noopener"
-        >
-          <Icon
-            name="mdi:email-outline"
-            class="w-8 text-blue-600 hover:text-blue-400"
-          />
-        </a>
-      </div>
+      <Socials color="text-blue-500" hoverColor="text-blue-400" />
     </nav>
     <slot />
 
@@ -134,8 +89,9 @@ const date = new Date().getFullYear();
           >
           <a
             class="border-b-2 border-b-transparent hover:border-b-teal-900"
-            href="mailto:contato@bioinfoclass.com">Contato</a
+            href="/contato">Contato</a
           >
+          <Socials color="text-white" hoverColor="text-white" />
         </div>
         <div class="mr-5 rounded-lg border border-white p-2">
           <h3 class="mb-5 text-center">Se inscreva na Newsletter</h3>
