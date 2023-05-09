@@ -14,7 +14,13 @@ const { image, name, specialties, github, lattes } = Astro.props;
 ---
 
 <div class="flex rounded-lg border p-2">
-  <Image src={image} width={120} height={120} alt="Matt" />
+  <Image
+    class="rounded-full bg-white"
+    src={image}
+    width={200}
+    height={200}
+    alt="Matt"
+  />
   <div class="ml-5 flex flex-col gap-5">
     <p class="text-xl">{name}</p>
     <p class="text-sm">Áreas favoritas: {specialties}</p>
