@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  color: string;
+  hoverColor: string;
+}
+
+const { color, hoverColor } = Astro.props;
+---
+
+<div class="flex justify-center gap-2">
+  <a
+    href="https://www.instagram.com/bioinfoclass/"
+    target="_blank"
+    rel="noopener"
+  >
+    <Icon name="mdi:instagram" class={`w-8 ${color} hover:${hoverColor}`} />
+  </a>
+  <a
+    href="https://www.linkedin.com/company/bioinfoclass"
+    target="_blank"
+    rel="noopener"
+  >
+    <Icon name="mdi:linkedin" class={`w-8 ${color} hover:${hoverColor}`} />
+  </a>
+  <a
+    href="https://www.facebook.com/profile.php?id=100092001289240"
+    target="_blank"
+    rel="noopener"
+  >
+    <Icon name="mdi:facebook" class={`w-8 ${color} hover:${hoverColor}`} />
+  </a>
+  <Icon name="mdi:youtube" class={`w-8 ${color} hover:${hoverColor}`} />
+  <a href="mailto:contato@bioinfoclass.com" target="_blank" rel="noopener">
+    <Icon name="mdi:email-outline" class={`w-8 ${color} hover:${hoverColor}`} />
+  </a>
+</div>
