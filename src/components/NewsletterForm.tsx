@@ -60,39 +60,42 @@ export default function NewsletterForm() {
 
   return (
     <form
-      className="mx-auto flex items-center gap-5"
+      className="mx-auto flex flex-col items-center gap-5"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <input
-        type="hidden"
-        value="1dbaa351-c61a-4b8a-9d8c-b41682f9a417"
-        {...register("access_key")}
-      />
-      <input
-        type="checkbox"
-        id=""
-        className="hidden"
-        {...register("botcheck")}
-      />
-      <label htmlFor="name">Seu nome</label>
-      <input
-        {...register("name")}
-        className="p-2 focus:outline-purple-400"
-        placeholder="ex: João da Silva"
-      />
-      {errors.name && (
-        <p className=" text-xs italic text-red-500">{errors.name?.message}</p>
-      )}
-      <label htmlFor="email">Seu Email</label>
-      <input
-        {...register("email")}
-        className="p-2 focus:outline-purple-400"
-        placeholder="ex: joao@gmail.com"
-      />
-      {errors.email && (
-        <p className=" text-xs italic text-red-500">{errors.email?.message}</p>
-      )}
-
+      <div className="flex items-center gap-5">
+        <input
+          type="hidden"
+          value="1dbaa351-c61a-4b8a-9d8c-b41682f9a417"
+          {...register("access_key")}
+        />
+        <input
+          type="checkbox"
+          id=""
+          className="hidden"
+          {...register("botcheck")}
+        />
+        <label htmlFor="name">Seu nome</label>
+        <input
+          {...register("name")}
+          className="p-2 focus:outline-purple-400"
+          placeholder="ex: João da Silva"
+        />
+        {errors.name && (
+          <p className=" text-xs italic text-red-500">{errors.name?.message}</p>
+        )}
+        <label htmlFor="email">Seu Email</label>
+        <input
+          {...register("email")}
+          className="p-2 focus:outline-purple-400"
+          placeholder="ex: joao@gmail.com"
+        />
+        {errors.email && (
+          <p className=" text-xs italic text-red-500">
+            {errors.email?.message}
+          </p>
+        )}
+      </div>
       <input
         className="rounded-lg bg-purple-400 p-2 text-white hover:cursor-pointer hover:bg-purple-300 "
         type="submit"
