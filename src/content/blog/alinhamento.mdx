@@ -44,4 +44,36 @@ Em seguida, o algoritmo realiza um rastreamento na matriz de pontuação para en
 
 O algoritmo Needleman-Wunsch ainda é computacionalmente intensivo para sequências muito grandes. Por isso, foram desenvolvidos algoritmos mais eficientes para alinhamento local, como o algoritmo Smith-Waterman.
 
-## Alinhamento em diferentes
+Hoje, existem diferentes parâmetros que mudam a fórmula das penalidades, levando em consideração diferentes premissas das sequências a serem alinhadas: alinhamentos progressivos, iterativos, local ou global, matriz de substituição de nucleotídeos ou aminoácidos, etc.
+
+## Alinhamento em diferentes áreas
+
+### Sequenciamento
+
+O alinhamento é uma etapa fundamental em muitos processos de sequenciamento, como o sequenciamento de nova geração (NGS). No sequenciamento NGS, os _reads_ podem ser alinhados contra um genoma de referência para identificar as regiões correspondentes e, assim, ajudar a montar o novo genoma.
+
+Existem diferentes abordagens para o alinhamento de sequências de NGS, mas a maioria dos algoritmos utiliza uma abordagem de alinhamento local. O alinhamento de sequências de NGS é uma etapa crítica em muitos processos de análise de dados, incluindo a detecção de variantes genéticas, a análise de expressão gênica e a identificação de isoformas de mRNA.
+
+### Genômica comparativa
+
+Para a genômica comparativa, a primeira etapa consiste em alinhamentos das proteínas de cada espécie e, de forma bem simplificada, a separação das mais similares em famílias gênicas para posterior análise. As famílias gênicas também precisam ser alinhadas para quaisquer análises filogenéticas posteriores.
+
+### Metagenômica
+
+De forma semelhante ao sequenciamento,quando se trabalha com metagenômica um dos passos necessários é alinhamento dos reads contra bancos de dados de referência para identificar as espécies presentes na amostra.
+
+## Programas de alinhamento
+
+Existem inúmeros programas de alinhamento disponíveis, mas alguns são mais comuns e estabelecidos do que outros. Alguns dos programas mais utilizados são:
+
+- [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi)
+- [Clustal Omega](https://www.ebi.ac.uk/Tools/msa/clustalo/)
+- [MUSCLE](https://www.ebi.ac.uk/Tools/msa/muscle/)
+- [MAFFT](https://mafft.cbrc.jp/alignment/software/)
+- [T-Coffee](http://tcoffee.crg.cat/apps/tcoffee/index.html)
+- [MACSE](https://bioweb.supagro.inra.fr/macse/)
+- [Mummer](https://mummer.sourceforge.net/)
+
+## Conclusões
+
+O alinhamento de sequências é uma etapa crítica em muitos processos de bioinformática e a otimização algorítmica permitiu diversos avanços na bioinformática. A escolha do algoritmo de alinhamento e dos parâmetros adequados para a análise pode ter também um grande impacto nos resultados finais e deve ser considerada durante as análises.
