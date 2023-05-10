@@ -60,10 +60,10 @@ export default function NewsletterForm() {
 
   return (
     <form
-      className="mx-auto flex flex-col items-center gap-5"
+      className="mx-auto flex flex-col items-center gap-2"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-2">
         <input
           type="hidden"
           value="1dbaa351-c61a-4b8a-9d8c-b41682f9a417"
@@ -82,7 +82,9 @@ export default function NewsletterForm() {
           placeholder="ex: João da Silva"
         />
         {errors.name && (
-          <p className=" text-xs italic text-red-500">{errors.name?.message}</p>
+          <p className=" text-lg italic text-red-500 md:text-sm">
+            {errors.name?.message}
+          </p>
         )}
         <label htmlFor="email">Seu Email</label>
         <input
@@ -91,7 +93,7 @@ export default function NewsletterForm() {
           placeholder="ex: joao@gmail.com"
         />
         {errors.email && (
-          <p className=" text-xs italic text-red-500">
+          <p className=" text-lg italic text-red-500 md:text-sm">
             {errors.email?.message}
           </p>
         )}

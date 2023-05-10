@@ -15,24 +15,36 @@ const { color, hoverColor } = Astro.props;
     target="_blank"
     rel="noopener"
   >
-    <Icon name="mdi:instagram" class={`w-8 ${color} ${hoverColor}`} />
+    <Icon
+      name="mdi:instagram"
+      class={`w-14 md:w-8 ${color} hover:${hoverColor}`}
+    />
   </a>
   <a
     href="https://www.linkedin.com/company/bioinfoclass"
     target="_blank"
     rel="noopener"
   >
-    <Icon name="mdi:linkedin" class={`w-8 ${color} hover:${hoverColor}`} />
+    <Icon
+      name="mdi:linkedin"
+      class={` w-14 md:w-8 ${color} hover:${hoverColor}`}
+    />
   </a>
   <a
     href="https://www.facebook.com/profile.php?id=100092001289240"
     target="_blank"
     rel="noopener"
   >
-    <Icon name="mdi:facebook" class={`w-8 ${color} hover:${hoverColor}`} />
+    <Icon
+      name="mdi:facebook"
+      class={`w-14 md:w-8 ${color} hover:${hoverColor}`}
+    />
   </a>
-  <Icon name="mdi:youtube" class={`w-8 ${color} hover:${hoverColor}`} />
+  <Icon name="mdi:youtube" class={`w-14 md:w-8 ${color} hover:${hoverColor}`} />
   <a href="mailto:contato@bioinfoclass.com" target="_blank" rel="noopener">
-    <Icon name="mdi:email-outline" class={`w-8 ${color} hover:${hoverColor}`} />
+    <Icon
+      name="mdi:email-outline"
+      class={`w-14 md:w-8 ${color} hover:${hoverColor}`}
+    />
   </a>
 </div>
