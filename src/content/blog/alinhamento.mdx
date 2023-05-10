@@ -1,0 +1,47 @@
+---
+title: Alinhamento de Sequências
+description: Test blog page
+author: Mateus B. Fiamenghi
+heroImage: https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs12859-020-3526-6/MediaObjects/12859_2020_3526_Fig1_HTML.png
+publishedAt: 2023-05-12
+---
+
+import { Image } from "@astrojs/image/components";
+
+Neste nosso primeiro post queremos falar sobre um dos procedimentos mais importantes para a análise de sequências biológicas: o alinhamento de sequências. Sem dúvidas realizar alinhamento é um dos procedimentos mais essenciais para a bioinformática e para entender diferentes faces da biologia. Se você é um estudante de bioinformática, é importante que você compreenda o funcionamento dessas ferramentas e saiba como usá-las em suas análises!
+
+Hoje devido à complexidade e a possibilidade de alinhar sequências grandes, os alinhamentos são realizados por programas alinhadores de sequência, que comparam duas ou mais sequências e determinam seu grau de semelhança. Eles são usados em diversas áreas da bioinformática, desde a genômica comparativa até a análise de RNA-Seq para diferentes fins. Com o aumento exponencial no número de sequências biológicas disponíveis, a análise de alinhamentos tornou-se imprescindível para a compreensão da biologia molecular.
+
+## Afinal porque alinhar sequências?
+
+Alinhar sequências permite identificar semelhanças e diferenças entre elas. Isso é fundamental para a compreensão da biologia molecular, pois nos ajuda a entender a evolução das espécies, a identificar regiões conservadas que podem ter funções importantes, e a identificar mutações e outros eventos genéticos que podem estar associados a doenças ou características biológicas específicas. Além disso, o alinhamento é um pré-requisito para muitos pipelines, como para a montagem de genomas tanto _de novo_ (contra um genoma de referência) quanto _ab initio_ (sem referência), a análise de RNA-Seq, a identificação de variantes genéticas, filogenômica, dentre outras.
+
+## O problema computacional
+
+Dadas duas sequências m e n, existem diversas formas de alinhá-las e quanto maiores forem, mais possibilidades surgem. O número de alinhamentos possíveis para elas é calculado como (m+n)!/m!\*n!
+
+Isto significa que para duas sequências de tamanho 11, há 705.432 alinhamentos possíveis, enquanto que para duas sequências de tamanho 100 (ainda muito menor do que muitos alinhamentos que fazemos) as possibilidades crescem para mais que 10^60.
+
+## Então como fazemos alinhamentos?
+
+Dois pesquisadores, Saul B. Needleman e Christian D. Wunsch criaram um algoritmo em 1970 que permitia alinhar duas sequências de uma forma computacionalmente possível. A lógica do algoritmo Needleman-Wunsch é utilizada até hoje com algumas adaptações.
+
+De forma breve, o algoritmo Needleman-Wunsch começa por criar uma matriz de pontuação que é preenchida com as pontuações de correspondência, penalidades de gaps e outras penalidades de substituição (mismatch entre nucleotídeos). Em seguida, o algoritmo usa esta matriz para calcular uma pontuação de alinhamento para cada posição possível no alinhamento, utilizando uma fórmula que considera as pontuações de correspondência e as penalidades de lacunas.
+
+Em seguida, o algoritmo realiza um rastreamento na matriz de pontuação para encontrar o caminho com a maior pontuação, o que resulta no alinhamento ótimo global entre as duas sequências.
+
+<div class="flex flex-col items-center">
+  <Image
+    class="mb-0"
+    src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Needleman-Wunsch_pairwise_sequence_alignment.png"
+    alt="Algoritmo Needleman-Wunsch"
+    format="webp"
+    width={500}
+    height={500}
+  />
+  <p class="text-sm">Esquema do algoritmo Needleman-Wunsch</p>
+</div>
+
+O algoritmo Needleman-Wunsch ainda é computacionalmente intensivo para sequências muito grandes. Por isso, foram desenvolvidos algoritmos mais eficientes para alinhamento local, como o algoritmo Smith-Waterman.
+
+## Alinhamento em diferentes
