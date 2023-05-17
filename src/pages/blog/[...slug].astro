@@ -28,7 +28,7 @@ const { Content } = await entry.render();
     </span>Voltar
   </a>
   <article class="flex flex-col items-center justify-center">
-    <h1 class="my-10 text-3xl">{entry.data.title}</h1>
+    <h1 class="my-10 text-3xl text-blue-500">{entry.data.title}</h1>
     <SocialSharing />
     <hr class="mx-auto my-5 w-1/2" />
     <Image
@@ -40,7 +40,7 @@ const { Content } = await entry.render();
     />
 
     <div
-      class="prose mx-5 mb-10 mt-10 text-justify text-lg first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 prose-headings:text-blue-600 prose-a:text-blue-500 hover:prose-a:text-blue-400"
+      class="prose mx-5 mb-10 mt-10 text-justify text-lg first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 prose-headings:text-blue-600 prose-a:text-blue-500 prose-a:no-underline hover:prose-a:text-blue-400"
     >
       <Content />
     </div>

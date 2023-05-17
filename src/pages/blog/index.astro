@@ -13,7 +13,7 @@ const blogEntries = await getCollection("blog");
     <h1 class="mb-20 mt-10 text-center text-3xl">
       Confira nosso <span class="text-blue-600">blog</span>!
     </h1>
-    <ul class="mx-10 mb-20 flex md:ml-20">
+    <ul class="mx-10 mb-20 flex gap-10 md:ml-20">
       {
         blogEntries.map((blogPostEntry) => (
           <li class="flex flex-col rounded-md border shadow-md hover:border-blue-600">
@@ -23,12 +23,12 @@ const blogEntries = await getCollection("blog");
                 alt={`Hero image for ${blogPostEntry.data.title}`}
                 class="mb-5 h-48 w-full rounded-md"
               />
-              <h3 class="ml-2 text-lg text-blue-600">
+              <h3 class="mx-5 text-center text-lg text-blue-600">
                 {blogPostEntry.data.title}
               </h3>
             </a>
             <time
-              class="mb-2 px-2 text-right text-sm"
+              class="mb-2 mr-2 text-right text-sm"
               datetime={blogPostEntry.data.publishedAt.toISOString()}
             >
               <span>Publicado em </span>{" "}

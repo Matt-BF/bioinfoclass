@@ -1,0 +1,68 @@
+---
+title: O Design Experimental de RNA-Seq
+description: "Um ponto extremamente relevante para obter o máximo de informação possível dos dados de RNA-Seq é cuidadosamente planejar o experimento, ou seja discutir o design experimental. Um bom design experimental minimizará as fontes de variabilidade e maximizará o poder de detectar mudanças na expressão gênica. Mesmo que o bioinformata responsável por analisar os dados não realizará os experimentos em bancada, é importante a sua participação no planejamento"
+author: Mateus B. Fiamenghi
+heroImage: https://images.newscientist.com/wp-content/uploads/2019/07/26113815/f0238645-rna_molecules_web.jpg
+publishedAt: 2023-05-17
+---
+
+Com o advento das tecnologias de sequenciamento e montagem de genomas, a progressão natural é tentar entender a expressão gênica com bastante sensitividade e acurácia. O sequenciamento de RNA (RNA-Seq) é uma técnica poderosa para este fim, e permitiu estudar uma ampla gama de questões biológicas, desde a compreensão de como os genes são regulados até a identificação de mutações causadoras de doenças, os genes mais importantes para determinados fenótipos e como podemos alterar tanto os genes quanto seus reguladores para diferentes finalidades.
+
+Um ponto extremamente relevante para obter o máximo de informação possível dos dados de RNA-Seq é cuidadosamente planejar o experimento, ou seja discutir o design experimental.
+
+## Design experimental para RNA-seq
+
+Um bom design experimental minimizará as fontes de variabilidade e maximizará o poder de detectar mudanças na expressão gênica. Mesmo que o bioinformata responsável por analisar os dados não realizará os experimentos em bancada, é importante a sua participação no planejamento, e que tenha conhecimento estatístico para justificar certas escolhas ou realizar as concessões necessárias se a verba for reduzida.
+
+Os primeiros questionamentos que se deve realizar na hora de planejar seu RNA-seq são:
+
+- Qual é a pergunta biológica que quero responder?
+- Qual ou quais tipos de amostras irei precisar?
+- Qual cobertura de sequenciamento mínima?
+- Quantas réplicas serão necessárias?
+
+A questão biológica que você está tentando responder terá um grande impacto no design do experimento. Por exemplo, se você estiver interessado em estudar mudanças na expressão gênica em resposta a uma nova droga ou medicamento, precisará projetar um experimento que inclua grupos de controle e possivelmente diversos tratamentos com diferentes concentrações da droga.
+
+O tipo de amostras que você usará também afetará o seu experimento. Por exemplo, se você estiver trabalhando com células humanas, você precisará garantir que o meio de cultivo seja apropriado para as células, ao mesmo tempo que ele não interfira nos resultados do experimento.
+
+A cobertura de sequenciamento é o número de leituras que você gerará para cada amostra e afeta diretamente o poder de sua análise estatística. Em geral, recomenda-se ter uma profundidade de sequenciamento de pelo menos 10 milhões de leituras por amostra. De forma semelhante, o número de replicatas afeta a precisão do resultado e confiabilidade estatística, pois indica quantas vezes cada condição será mensurada. [Um estudo](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611) recomenda pelo menos 6 réplicas biológicas, subindo para até 12 dependendo de quantos genes diferencialmente expressos precisa-se realmente identificar. O que vemos usualmente são 3 réplicas biológicas, mas o mesmo estudo identificou que a maioria dos programas para análise de expressão diferencial apenas identificou 25% de genes diferencialmente expressos nestas condições.
+
+Comentando um pouco mais sobre estes pontos, é necessário bastante atenção para não se cometer certos erros, como por exemplo, se esquecer das replicatas biológicas, usar o teste estatístico incorreto ou filtrar incorretamente os dados. A falta de replicatas biológicas tornará mais difícil o controle de efeitos de lote (batch effects), enquanto o uso do teste estatístico incorreto acarretará em conclusões incorretas a respeito dos dados. De forma semelhante, não filtrar corretamente os reads fará com que haja a inclusão de fragmentos de baixa qualidade ou mapeamentos ruins no genoma sendo estudado.
+
+Além dos fatores listados acima, há uma série de outras considerações que devem ser levadas em conta ao projetar um experimento de RNA-Seq. Esses incluem:
+
+- A qualidade das amostras de RNA, armazenamento adequado e extração limpa
+- O uso de um kit para a preparação de biblioteca
+- A escolha da plataforma de sequenciamento
+- O uso de um pipeline de bioinformática adequado
+
+Ao considerar cuidadosamente todos esses fatores, você pode projetar um experimento de RNA-Seq que produzirá dados de alta qualidade que podem ser usados para responder às suas questões biológicas.
+
+### **Consequências do Desenho Experimental para a Bioinformática**
+
+Como vimos na seção anterior, o design experimental de RNA-Seq pode ter um impacto significativo na hora de analisar os resultados na bioinformática. Por exemplo, se a cobertura do sequenciamento for muito baixa, pode ser difícil detectar genes expressos diferencialmente. Da mesma forma, se o número de réplicas for muito baixo, os resultados da análise podem não ser confiáveis.
+
+Além disso, o desenho experimental pode afetar a escolha das ferramentas de bioinformática que serão utilizadas para análise. Por exemplo, se as amostras forem de espécies diferentes, pode ser necessário usar uma ferramenta que mapeie reads para vários genomas.
+
+É importante considerar cuidadosamente os pontos mencionados acima ao planejar um experimento de RNA-Seq. Ao fazer isso, você aumenta as chances dos dados sejam analisados de maneira condizente com os objetivos experimentais.
+
+### Boas práticas e padrões para Desenho Experimental de RNA-Seq
+
+Há uma série de boas práticas que podem ser usados para o seu experimento de RNA-Seq. Esses padrões são baseados nas recomendações do projeto ENCODE, que é uma cooperação de diversos cientistas para caracterizar o genoma humano.
+
+A seguir estão algumas boas práticas para o design experimental de RNA-Seq:
+
+- Use um meio de cultivo apropriado para o tipo de células com as quais você está trabalhando.
+- Use uma cobertura de sequenciamento de pelo menos 10 milhões de leituras por amostra.
+- Tenha NO MÍNIMO três réplicas por condição (e mesmo assim tenha cuidado, como vimos anteriormente).
+- Use um kit de preparação de biblioteca projetado para RNA-Seq.
+
+Seguindo esses padrões, você pode aumentar as chances de obter dados de alta qualidade de seu experimento de RNA-Seq.
+
+### Conclusões
+
+O design experimental é uma parte importante de qualquer experimento de RNA-Seq. Ao considerar cuidadosamente os fatores listados acima, você pode projetar um experimento que produzirá dados de alta qualidade que podem ser usados para responder às suas questões biológicas. Caso tenha alguma dúvida ou precise de ajuda durante o processo, nossos cientistas e consultores estão à disposição para auxiliá-lo tanto no desenho quanto na análise ou interpretação dos resultados.
+
+<a href="/contato" class="text-center">
+  Quero ajuda de um especialista
+</a>
