@@ -13,10 +13,10 @@ const blogEntries = await getCollection("blog");
     <h1 class="mb-20 mt-10 text-center text-3xl">
       Confira nosso <span class="text-blue-600">blog</span>!
     </h1>
-    <ul class="mx-10 mb-20 flex gap-10 md:ml-20">
+    <ul class="mx-10 mb-20 grid grid-cols-2 gap-5 md:ml-20 md:grid-cols-3">
       {
         blogEntries.map((blogPostEntry) => (
-          <li class="flex flex-col rounded-md border shadow-md hover:border-blue-600">
+          <li class="flex max-w-md flex-col rounded-md border shadow-md hover:border-blue-600">
             <a href={`/blog/${blogPostEntry.slug}`}>
               <img
                 src={blogPostEntry.data.heroImage}
