@@ -1,0 +1,145 @@
+---
+title: "As tecnologias de sequenciamento de DNA"
+description: "Um ponto extremamente relevante para obter o máximo de informação possível dos dados de RNA-Seq é cuidadosamente planejar o experimento, ou seja discutir o design experimental. Um bom design experimental minimizará as fontes de variabilidade e maximizará o poder de detectar mudanças na expressão gênica. Mesmo que o bioinformata responsável por analisar os dados não realizará os experimentos em bancada, é importante a sua participação no planejamento"
+author: Mateus B. Fiamenghi
+heroImage: https://www.statnews.com/wp-content/uploads/2021/05/AdobeStock_112320174.jpeg
+publishedAt: 2023-05-25
+---
+
+import { Image } from "@astrojs/image/components";
+
+No campo da biologia, um avanço revolucionário teve um impacto profundo em nossa compreensão da vida: o sequenciamento do DNA. A capacidade de decodificar as informações genéticas armazenadas nos organismos abriu caminho para descobertas e avanços notáveis ​​em vários campos, desde medicina e agricultura até biologia evolutiva e conservação. Neste artigo, vamos mergulhar no mundo das tecnologias de sequenciamento, explorando seu significado e o poder transformador que elas possuem ao desvendar a intrincada tapeçaria da vida.
+
+## Um breve histórico
+
+O DNA ficou muitas décadas deixado de lado após sua descoberta, uma vez que o consenso científico era que as proteínas eram as grandes responsáveis pelo código da vida. Apenas com os experimentos de transformação genética de Avery, demonstrando que era o DNA que carregava a informação genética, que ele começou a receber mais atenção. Nos anos seguintes começou uma "corrida do ouro" para descobrir qual era a estrutura da molécula de DNA, que foi resolvida em 1953, quando Watson e Crick publicaram o modelo de dupla hélice baseado em grande parte nos achados de cristalografia de Rosalind Franklin.
+
+Foi constatado também que as fitas de DNA são compostas por duas fitas, ligadas por pontes de hidrogênio e correndo em direções opostas. Cada fita é composta por quatro nucleotídeos – adenina (A), citosina (C), guanina (G) e timina (T), e que o nucletídeo A em uma fita sempre se pareia com um nucleotídeo T na outra, enquanto C sempre pareia com G. Esta estrutura permite que com uma fita de DNA seja possível reconstruir a outra, o que chamamos de replicação semi-conservativa, um conceito utilizado em diversas práticas de biomol, inclusive para o sequenciamento.
+
+## O advento das tecnologias de sequenciamento
+
+Uma das principais contribuições para o sequenciamento veio de Frederick Sanger,que recebeu dois prêmios Nobel em vida: um pelo sequenciamento de proteínas e outro pelo sequenciamento do DNA.
+
+Sanger realizou o sequenciamento de proteínas antes, em 1955, quando completou a sequência de todos os aminoácidos da insulina. Esta ideia foi utilizada para o sequenciamento de DNA também, que veio um pouco mais tarde, na década de 1970. Em 1977 o sequenciamento Sanger foi utilizado para sequenciar o primeiro genoma completo, o do bacteriófago ΦX174, que possui 5386 pares de bases.
+
+O sequenciamento Sanger baseia-se na incorporação de didesoxinucleótidos de terminação de cadeia (ddNTPs) durante a síntese de DNA para determinar a sequência de um fragmento de DNA. Para isso, é realizada uma reação de PCR do fragmento de interesse que se quer sequenciar, utilizando dNTPs normais e os ddNTPs, que quando incorporados encerram a reação.
+
+No método tradicional com gel de eletroforese, eram realizadas 4 reações de PCR separadamente, onde em cada tubo uma pequena quantidade de um dos 4 tipos de ddNTP eram adicionados (ddATP, ddTTP, ddCTP ou ddGTP). Randomicamente esses ddNTPs eram incorporados, de forma que a reação cessava em tamanhos diferentes de produto de PCR. Os produtos de sequenciamento de cada tubo de reação eram carregados em um gel de poliacrilamida, que separa os fragmentos de DNA com base no tamanho. Uma corrente elétrica é aplicada, fazendo com que os fragmentos de DNA migrem através da matriz de gel, com fragmentos menores se movendo mais rápido que os maiores. Após a eletroforese, o gel era corado com um corante fluorescente ou exposto a um filme de raios X para visualizar os fragmentos de DNA marcados. A sequência era então determinada pela leitura da ordem das bandas de baixo para cima do gel, com cada banda representando um nucleotídeo.
+
+<div class="flex flex-col items-center text-sm">
+  <Image
+    class="mb-0"
+    src="https://www.mun.ca/biology/scarr/F12-22smc2.jpg"
+    alt="Sequenciamento Sanger por Gel de Eletroforese"
+    format="webp"
+    width={500}
+    height={500}
+  />
+  Esquema do sequenciamento Sanger usando Gel de Eletroforese
+</div>
+
+Obviamente é um método bastante trabalhoso e o método de gel deu lugar ao método por Eletroforese Capilar. A diferença neste tipo de metodologia é que os ddNTPs são marcados com fluoróforos (4 fluoróforos diferentes) e todos os fragmentos de DNA são carregados em um único capilar. A separação dos fragmentos é feita por eletroforese capilar, onde os fragmentos são separados por tamanho e detectados por fluorescência. A sequência é então determinada pela leitura por um software num equipamento especial. O método de sequenciamento Sanger baseado em laser oferece várias vantagens sobre o método tradicional baseado em gel, incluindo tempos de execução mais rápidos, maior rendimento, maior precisão e análise automatizada de dados.
+
+<div class="flex flex-col items-center text-sm">
+  <Image
+    class="mb-0"
+    src="https://letstalkscience.ca/sites/default/files/styles/width_800px/public/2020-07/capillary_gel_electrophoresis.png?itok=vlzUQLl7"
+    alt="Sequenciamento Sanger por Eletroforese Capilar"
+    format="webp"
+    width={500}
+    height={500}
+  />
+  Esquema do sequenciamento Sanger usando Eletroforese Capilar
+</div>
+
+O sequenciamento Sanger foi e continua sendo fundamental para decifrar as sequências de DNA de vários organismos, contribuindo significativamente para nossa compreensão da biologia, genética e biologia molecular, e embora tenha sido superados por outros métodos mais modernos e sensíveis, ainda é utilizado rotineiramente para experimentos de clonagem, expressão, confirmação de variantes e sequenciamento de fragmentos pequenos (800-1000bp).
+
+## O sequenciamento NGS
+
+O sequenciamento de próxima geração, ou NGS, surgiu como um divisor de águas no campo da genômica. Ele abrange um conjunto de plataformas de sequenciamento capazes de sequenciar simultaneamente milhões de fragmentos de DNA, permitindo a decodificação rápida e econômica de genomas inteiros. O NGS catalisou avanços em várias áreas, como identificar mutações causadoras de doenças, elucidar relações evolutivas e desvendar a complexa interação entre genes e o meio ambiente. Os fragmentos de leitura gerados por esta tecnologia são na faixa de 150 a 300bp, e o trabalho de bioinformática é importantíssimo para a montagem destes fragmentos corretamente, tópico que iremos falar em outro post.
+
+As etapas do sequenciamento são um pouco mais complexas, mas são mais simples de fazer, geram resultados mais rapidamente e mais precisos que o método Sanger.
+
+O primeiro passo é a fragmentação do DNA e ligação dos adaptadores: esses adaptadores servem como locais de iniciação para amplificação e fornecem as sequências necessárias para a ligação à plataforma de sequenciamento.
+
+Os fragmentos são então amplificados por PCR para criar várias cópias de cada fragmento de DNA, anexando os adaptadores a ambas as extremidades dos fragmentos.
+
+A próxima etapa é a geração dos clusters, onde o DNA é imobilizado num chip de sequenciamento. Os fragmentos de DNA imobilizados se automontam em grupos, com cada grupo contendo de milhares a milhões de fragmentos de DNA idênticos. Depois que os clusters são formados, o processo de sequenciamento real começa. O princípio envolve ciclos iterativos de incorporação de nucleotídeos marcados com fluorescência, captura dos sinais emitidos e determinação da sequência de nucleotídeos. A cada ciclo, um único nucleotídeo é incorporado ao fragmento de DNA, e após um bloqueio de reação, a fluorescência emitida é capturada e registrada. O bloqueio é então removido e um novo ciclo se inicia.
+
+<div class="flex flex-col items-center text-sm">
+  <Image
+    class="mb-0"
+    src="https://ars.els-cdn.com/content/image/3-s2.0-B9780128022344000021-f02-39-9780128022344.jpg"
+    format="webp"
+    width={500}
+    height={500}
+  />
+  Esquema simplificado do sequenciamento NGS Illumina
+</div>
+
+O sequenciamento NGS é o do mais utilizado atualmente, e com ele é possível sequenciar genomas inteiros, exomas, transcriptomas, metagenomas, etc.
+
+## O sequenciamento de terceira geração
+
+O sequenciamento de terceira geração, também conhecido como sequenciamento de molécula única, representa um avanço significativo nas tecnologias de sequenciamento de DNA. Ele oferece vantagens como comprimentos de leitura mais longos, a capacidade de capturar cinética em tempo real e requisitos reduzidos de preparação de amostras, além de gerarem os chamados "long reads" (reads longos, de 20 a 40kbp), com qualidade e confiabilidade das leituras aumentando com o avanço da tecnologia. Há algumas tecnologias proeminentes neste campo, mas aqui vamos nos ater ao PacBio e Nanopore.
+
+### Sequenciamento Pacific Biosciences (PacBio)
+
+O sequenciamento PacBio é baseado no conceito de sequenciamento de molécula única em tempo real (SMRT). Ele utiliza guias de onda de modo zero (ZMWs), que são pequenos poços que contêm uma única enzima DNA polimerase. Neste sequenciamento também é necessário a fragmentação do DNA e ligação dos adaptadores. A biblioteca de DNA é então ligada a uma célula SMRT, que contém milhares de ZMWs. Cada ZMW contém uma única enzima polimerase e um molde de DNA. Um iniciador de sequenciamento hibridiza com o molde de DNA e a polimerase começa a sintetizar uma nova fita de DNA usando nucleotídeos marcados. À medida que a polimerase incorpora os nucleotídeos na fita crescente de DNA, a fluorescência emitida pelo nucleotídeo é detectada em tempo real. Os sinais de fluorescência são registrados e a sequência de DNA é determinada.
+
+<div class="flex flex-col items-center text-sm">
+  <Image
+    class="mb-0"
+    src="https://www.yourgenome.org/wp-content/uploads/2022/04/smrt-pacbio-sequencing_yourgenome.png"
+    format="webp"
+    width={500}
+    height={500}
+  />
+  Sequenciamento PacBio
+</div>
+
+### Sequenciamento Oxford Nanopore
+
+Essa abordagem inovadora, desenvolvida pela Oxford Nanopore Technologies (ONT), oferece várias vantagens, incluindo longos comprimentos de leitura, sequenciamento em tempo real e a capacidade de sequenciar moléculas nativas de DNA e RNA sem amplificação. Ela utiliza nanoporos para ler diretamente a sequência de nucleotídeos de moléculas de DNA ou RNA.
+
+O equipamento utilizado para sequenciar é um dispositivo pequeno, que cabe no USB do computador. Dentro dele há milhares de proteínas (poros) onde em cada uma ocorre um ciclo de sequenciamento.
+
+A amostra de DNA para sequenciamento é convertida em uma forma de cadeia simples, geralmente por meio do uso de enzimas ou processos químicos específicos. Esse formato de fita simples facilita sua passagem pelo nanoporo durante o sequenciamento.O processo de sequenciamento envolve a passagem da molécula de DNA ou RNA de fita simples pelo nanoporo e o monitoramento das mudanças na corrente iônica à medida que os nucleotídeos passam pelo poro.
+
+Um potencial elétrico é aplicado através do nanoporo, criando uma corrente iônica através do poro. À medida que a molécula de DNA ou RNA passa pelo nanoporo, os nucleotídeos individuais causam interrupções na corrente iônica.
+Diferentes nucleotídeos produzem mudanças distintas na corrente, permitindo sua identificação, essas mudanças são detectadas por sensores especializados localizados próximos ao nanoporo. Os sensores convertem as flutuações de corrente em sinais elétricos, que são registrados e analisados ​​em tempo real,comparando o sinal com um banco de dados para atribuir nucleotídeos específicos aos eventos registrados.
+
+<div class="flex flex-col items-center text-sm">
+  <Image
+    class="mb-0"
+    src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-021-01108-x/MediaObjects/41587_2021_1108_Fig1_HTML.png"
+    format="webp"
+    width={800}
+    height={500}
+  />
+  Sequenciamento Nanopore
+</div>
+
+## Algumas aplicações
+
+### Aplicações em Medicina
+
+O impacto das tecnologias de sequenciamento na medicina não pode ser exagerado. Ao decodificar o genoma de um indivíduo, os médicos agora podem personalizar os tratamentos médicos e adaptar as intervenções com base na composição genética única de um paciente. O sequenciamento genômico tornou-se instrumental no diagnóstico de distúrbios genéticos raros, na previsão de riscos de doenças e na orientação de abordagens de medicina de precisão. Além disso, as tecnologias de sequenciamento permitiram muitos avanços no estudo genômico do câncer, incluindo a identificação de mutações genéticas que contribuem para o desenvolvimento do câncer e a descoberta de biomarcadores que podem ser usados ​​para prever a resposta do paciente à terapia.
+
+### Avanços Agrícolas
+
+O setor agrícola também colheu os benefícios das tecnologias de sequenciamento. Com a capacidade de sequenciar genomas de culturas, os pesquisadores agora podem desenvolver variedades de plantas melhoradas com maior rendimento, resistência a doenças e conteúdo nutricional. Além disso, o sequenciamento de DNA facilita a identificação de marcadores genéticos associados a características desejáveis, permitindo programas de melhoramento eficientes e acelerando o desenvolvimento de novas variedades de culturas para atender à demanda global por segurança alimentar.
+
+### Compreendendo a evolução e a biodiversidade
+
+As tecnologias de sequenciamento revolucionaram nossa compreensão das relações evolutivas e da biodiversidade. Comparando as sequências de DNA de diferentes organismos, os pesquisadores podem reconstruir árvores filogenéticas, elucidando a história evolutiva das espécies e entendendo suas relações. O sequenciamento metagenômico nos permite estudar comunidades microbianas complexas, revelando seu papel nos ecossistemas, na saúde humana e nos processos ambientais. Além disso, podemos realizar acompanhamentos ecológicos das espécies e monitorar a biodiversidade usando sequenciamento de DNA ambiental.
+
+## Conclusões
+
+No âmbito da biologia, as tecnologias de sequenciamento desempenharam um papel transformador ao desvendar os mistérios da vida. Desde o advento do sequenciamento de Sanger até o surgimento do sequenciamento de próxima geração (NGS) e os avanços revolucionários do sequenciamento de terceira geração, essas tecnologias revolucionaram nossa compreensão de genomas, transcriptomas e muito mais.
+
+O sequenciamento de Sanger, com seus métodos de eletroforese capilar e baseados em gel, abriu muitas possibilidades científica. As tecnologias NGS trouxeram uma mudança de paradigma no campo, permitindo sequenciamento paralelo massivo, geração de dados de alto rendimento e diversas aplicações. O NGS permitiu o sequenciamento abrangente do genoma, perfil do transcriptoma, estudos epigenômicos, metagenômica e muito mais. A acessibilidade e escalabilidade do tornaram-no uma ferramenta indispensável em vários campos, incluindo medicina, agricultura e ciências ambientais.
+
+As tecnologias de sequenciamento de terceira geração, como PacBio e Nanopore, avançaram ainda mais no campo, oferecendo comprimentos de leitura mais longos, sequenciamento em tempo real e requisitos reduzidos de preparação de amostras. Em especial o sequenciamento Nanopore abriu novos horizontes no sequenciamento demonstrando a possibilidade de dispositivos de sequenciamento portáteis.
+
+À medida que as tecnologias de sequenciamento continuam a evoluir e melhorar, estamos preparados para revelar novos insights sobre as complexidades da vida. A capacidade de decifrar genomas, transcriptomas e epigenomas em escalas e velocidades sem precedentes nos capacita a entender doenças, rastrear processos evolutivos, descobrir novos organismos e desenvolver abordagens de medicina personalizada.
