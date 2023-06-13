@@ -3,6 +3,9 @@ import { getCollection } from "astro:content";
 import { Image } from "@astrojs/image/components";
 import Layout from "../../layouts/Layout.astro";
 const blogEntries = await getCollection("blog");
+const sortedBlogEntries = blogEntries.sort((a, b) => {
+  return b.data.publishedAt.getTime() - a.data.publishedAt.getTime();
+});
 ---
 
 <Layout
@@ -15,7 +18,7 @@ const blogEntries = await getCollection("blog");
     </h1>
     <ul class="mx-10 mb-20 grid grid-cols-2 gap-5 md:ml-20 md:grid-cols-3">
       {
-        blogEntries.map((blogPostEntry) => (
+        sortedBlogEntries.map((blogPostEntry) => (
           <li class="flex max-w-md flex-col rounded-md border shadow-md hover:border-blue-600">
             <a href={`/blog/${blogPostEntry.slug}`}>
               <img
