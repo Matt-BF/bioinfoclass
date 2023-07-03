@@ -74,7 +74,7 @@ const date = new Date().getFullYear();
     <slot />
 
     <!-- Footer -->
-    <div class="bg-blue-900 text-white">
+    <div class="bg-blue-950 text-white">
       <div class="grid px-2 py-8 lg:grid-cols-2">
         <div
           class="ml-10 mt-5 flex flex-col items-center justify-center gap-2 md:mt-0 lg:items-start"
@@ -86,8 +86,11 @@ const date = new Date().getFullYear();
           <a class="border-b-2 border-b-transparent" href="/contato">Contato</a>
           <Socials color="text-white" hoverColor="text-white" />
         </div>
-        <div class="rounded-lg border border-white p-5">
-          <h3 class="mb-5 text-center">Se inscreva na Newsletter</h3>
+        <div class="mt-8 flex flex-col rounded-lg p-3">
+          <h3 class="mb-2 text-center text-2xl">Se inscreva na Newsletter!</h3>
+          <p class="mb-5 text-center">
+            Fique sabendo novidades da bioinfo em primeira mão
+          </p>
           <NewsletterForm client:load />
         </div>
       </div>

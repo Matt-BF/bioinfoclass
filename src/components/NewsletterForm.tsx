@@ -60,10 +60,10 @@ export default function NewsletterForm() {
 
   return (
     <form
-      className="mx-auto flex flex-col items-center gap-2"
+      className="mx-auto flex flex-col gap-3 "
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex items-center gap-2">
+      <div className="flex gap-2">
         <input
           type="hidden"
           value="1dbaa351-c61a-4b8a-9d8c-b41682f9a417"
@@ -75,22 +75,20 @@ export default function NewsletterForm() {
           className="hidden"
           {...register("botcheck")}
         />
-        <label htmlFor="name">Seu nome</label>
         <input
           {...register("name")}
-          className="p-2 focus:outline-purple-400"
-          placeholder="ex: João da Silva"
+          className="rounded-lg p-2 focus:outline-purple-400"
+          placeholder="Seu nome"
         />
         {errors.name && (
           <p className=" text-lg italic text-red-500 md:text-sm">
             {errors.name?.message}
           </p>
         )}
-        <label htmlFor="email">Seu Email</label>
         <input
           {...register("email")}
-          className="p-2 focus:outline-purple-400"
-          placeholder="ex: joao@gmail.com"
+          className="rounded-lg p-2 focus:outline-purple-400"
+          placeholder="Seu email"
         />
         {errors.email && (
           <p className=" text-lg italic text-red-500 md:text-sm">
