@@ -1,0 +1,72 @@
+---
+title: "Revelando os Padrões Ocultos: Predição e Detecção de Motivos de Sequências"
+description: "Como temos visto em nossos posts, a bioinformática revolucionou nossa compreensão dos sistemas biológicos, permitindo-nos extrair informações valiosas de grandes quantidades de dados, assim como elaborar hipóteses que sem o auxílio computacional não seriam possíveis. Uma área-chave de pesquisa neste campo é a detecção de motivos,"
+author: Mateus B. Fiamenghi
+heroImage: https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202105/protein-covid.png?itok=uQDGOr3nimage/jpeg
+publishedAt: 2023-07-03
+---
+
+import { Image } from "@astrojs/image/components";
+
+Como temos visto em nossos posts, a bioinformática revolucionou nossa compreensão dos sistemas biológicos, permitindo-nos extrair informações valiosas de grandes quantidades de dados, assim como elaborar hipóteses que sem o auxílio computacional não seriam possíveis. Uma área-chave de pesquisa neste campo é a detecção de motivos, ou seja, a identificação de padrões curtos e conservados em DNA, RNA ou sequências de proteínas. Hoje vamos falar um pouco dos conceitos da predição destes motivos focando em proteínas, bem como explorar o software InterPro, que auxilia nesse processo.
+
+## O que são Motivos?
+
+Motivos são padrões curtos e recorrentes em sequências biológicas que possuem significado funcional ou estrutural. Eles podem ser encontrados em sequências de DNA, RNA ou proteínas e desempenham papéis cruciais em vários processos biológicos.
+
+A descoberta e análise de motivos desempenham um papel crucial na compreensão da complexa interação entre sequência, estrutura e função em sistemas biológicos. Ao identificar e caracterizar motivos, os pesquisadores podem descobrir regiões importantes nas sequências primárias que orientam os processos biológicos, fornecendo uma base para uma investigação mais aprofundada, facilitando o desenvolvimento de aplicações biotecnológicas ou permitindo a descoberta de novos alvos terapeuticos.
+
+## Técnicas de Previsão e Detecção de Motivos
+
+Vários métodos computacionais foram desenvolvidos para prever e detectar motivos em sequências biológicas. Algumas técnicas utilizadas são:
+
+1. Position Weight Matrices (PWMs) - Matrizes de peso de posição
+
+   Também conhecida por Position-specific socring matrix (PSSM) PWMs são modelos estatísticos que representam motivos calculando a probabilidade de cada nucleotídeo ou aminoácido ocorrer em cada posição dentro do motivo. Os PWMs geralmente derivam de um alinhamento múltiplo de sequências consideradas funcionalmente relacionadas e se tornaram uma parte importante de muitas ferramentas de software para descoberta de motivos. Ao utilizar um conjunto de sequências conhecidas com funcionalidade semelhante, é possível construir uma matriz de pontuação para cada posição no alinhamento, permitindo a identificação de motivos conservados tanto nas sequências alinhadas, quanto para novas sequências desconhecidas.
+
+<div class="flex flex-col items-center">
+  <Image
+    class="mb-0"
+    src="https://weblogo.berkeley.edu/img/cap_dna.png"
+    alt="PWM graph"
+    format="webp"
+    width={500}
+    height={150}
+  />
+  <figcaption class="text-center text-sm">
+    Os PWMs/PSSMs frequentemente são representados com um logo de sequências
+    (gráfico que mostra quão conservada é cada posição no alinhamento)
+  </figcaption>
+</div>
+
+2. Position Weight Matrices (PWMs) - Matrizes de peso de posição
+
+   HMMs são modelos probabilísticos que capturam tanto a sequência observada quanto os estados ocultos. Comentamos sobre o HMM [neste post no instagram](https://www.instagram.com/p/CtJskChMGDe), mas brevemente, eles são empregados para identificar motivos modelando as relações entre os diferentes estadose transições, para capturar motivos mais complexos com comprimentos variáveis e posicionamento flexível.
+
+3. Amostragem de Gibbs
+
+   A amostragem de Gibbs é um algoritmo estocástico que explora o espaço de possíveis localizações de motivos. Por amostragem iterativa das distribuições de probabilidade de ocorrências de motivos, ele identifica as posições de motivos mais prováveis. Essa técnica é eficaz para detectar motivos que podem ocorrer com espaçamento variável ou ter padrões de consenso menos definidos.
+
+## Interpro - Solucionando o desafio para proteínas
+
+O [InterPro](https://www.ebi.ac.uk/interpro/) é uma ferramenta essencial de bioinformática que combina vários bancos de dados de assinatura de proteínas em uma plataforma abrangente e integrada para busca de motivos. Utilizando-o é possível classificar proteínas com base na presença de motivos conservados, domínios e outras características funcionais, basta utilizar alguma das ferramentas de busca disponível pelo site, ou pela API: a partir de sequência, texto (ex: kinase, ou algum código próprio do interpro como IPR020422) ou arquitetura de domínio
+
+<div class="flex flex-col items-center">
+  <Image
+    class="mb-0"
+    src="https://interpro-documentation.readthedocs.io/en/latest/_images/browse_page.png"
+    alt="Interpro example"
+    format="webp"
+    width={800}
+    height={500}
+  />
+  <figcaption class="text-center text-sm">
+    Exemplo de busca no site do Interpro por diferentes domínios
+  </figcaption>
+</div>
+
+Alguns dos bancos de dados utilizados pelo Interpro são o [PANTHER](http://www.pantherdb.org/), [PROSITE](https://prosite.expasy.org/), Pfam (já integrado diretamente no site do Interpro), e servem para identificar motivos conservados, domínios e outras características de proteínas em conjunto, dando mais segurança e completude de análise ao pesquisador. Ao mapear motivos conhecidos em proteínas recém-sequenciadas, o InterProScan permite que os pesquisadores infiram anotações funcionais e obtenham informações sobre a funcionalidade da proteína e as relações evolutivas.
+
+## Conclusões:
+
+A predição e detecção de motivos são trabalhos importantes na bioinformática, permitindo aos pesquisadores desvendar as características funcionais e estruturais das sequências biológicas. Técnicas como PWMs, HMMs e amostragem de Gibbs oferecem diferentes abordagens para identificar motivos em DNA, RNA e sequências de proteínas. Além disso, ferramentas como InterPro fornecem aos pesquisadores recursos abrangentes para explorar motivos, domínios e outros elementos funcionais conservados em proteínas. Esses avanços continuam a impulsionar descobertas em genômica, desenvolvimento de medicamentos e medicina personalizada, oferecendo um enorme potencial para avanços futuros.
