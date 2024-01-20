@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import matt from "../images/matt.webp";
 import { Icon } from "astro-icon";
 import NewsletterForm from "../components/NewsletterForm";
@@ -104,26 +104,16 @@ import NewsletterForm from "../components/NewsletterForm";
 
     <!-- Instructor section -->
     <section class="relative mt-10 bg-blue-950">
-      <div
-        class="md:absolute md:left-0 md:top-0 md:h-full md:w-1/2 md:rounded-tr-full md:border-r-8 md:bg-slate-100 md:bg-[url('/src/images/Bioinfoclass_logo.png')] md:bg-cover md:bg-no-repeat lg:w-1/3"
-      >
-      </div>
       <h2 class="py-5 text-center text-4xl text-white">
         Um pouco sobre a Bioinfoclass
       </h2>
       <div
-        class="mt-10 flex flex-col items-center justify-center gap-5 pb-10 md:grid md:grid-cols-2"
+        class="mx-5 mt-10 grid justify-center gap-5 pb-10 md:ml-20 md:grid-cols-2"
       >
-        <Image
-          src={matt}
-          alt="Matt"
-          class="z-40 ml-10 rounded-full bg-slate-100 bg-[url('/src/images/Bioinfoclass_logo.png')] bg-contain bg-no-repeat md:border-none md:bg-transparent md:bg-none"
-          height={360}
-          width={270}
-        />
-
-        <div class="flex w-3/4 flex-col gap-5 text-white md:mr-10">
-          <p class="rounded-lg bg-purple-400 p-5">
+        <div
+          class="flex flex-col items-center justify-center gap-5 text-white md:ml-10 md:items-start"
+        >
+          <p class="rounded-lg bg-purple-400 p-5 text-justify">
             Muito prazer, sou Mateus Fiamenghi (Matt)! Sou doutor pela UNICAMP
             em Genética e Biologia Molecular e trabalho com bioinformática desde
             2016. Desde aquela época fiquei fascinado e apaixonado pela área!
@@ -132,36 +122,45 @@ import NewsletterForm from "../components/NewsletterForm";
             Bioinfoclass para compartilhar meu conhecimento e ajudar biólogos
             que também vieram da bancada como eu a entenderem melhor o mundo da
             bioinfo.
+            <div class="flex gap-5">
+              <a
+                href="https://github.com/Matt-BF"
+                target="_blank"
+                rel="noopener"
+              >
+                <Icon
+                  name="mdi:github"
+                  class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
+                />
+              </a>
+              <a
+                href="http://lattes.cnpq.br/9005713927447046"
+                target="_blank"
+                rel="noopener"
+              >
+                <Icon
+                  name="mdi:school-outline"
+                  class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mateus-fiamenghi-584867174/"
+                target="_blank"
+                rel="noopener"
+              >
+                <Icon
+                  name="mdi:linkedin"
+                  class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
+                />
+              </a>
+            </div>
           </p>
-          <div class="flex justify-center gap-5 lg:justify-start">
-            <a href="https://github.com/Matt-BF" target="_blank" rel="noopener">
-              <Icon
-                name="mdi:github"
-                class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
-              />
-            </a>
-            <a
-              href="http://lattes.cnpq.br/9005713927447046"
-              target="_blank"
-              rel="noopener"
-            >
-              <Icon
-                name="mdi:school-outline"
-                class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mateus-fiamenghi-584867174/"
-              target="_blank"
-              rel="noopener"
-            >
-              <Icon
-                name="mdi:linkedin"
-                class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
-              />
-            </a>
-          </div>
         </div>
+        <Image
+          src={matt}
+          alt="Matt"
+          class="z-40 order-first rounded-full md:order-last lg:w-2/5"
+        />
       </div>
     </section>
 

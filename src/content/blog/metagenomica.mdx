@@ -1,12 +1,12 @@
 ---
-title: "Algoritmos para montagem do genoma"
+title: "O que é metagenômica?"
 description: "A montagem do genoma é um processo fundamental na genômica que envolve a junção das sequências fragmentadas de DNA geradas por tecnologias de sequenciamento em uma representação coerente do genoma de um organismo. Essa tarefa intricada requer algoritmos sofisticados que equilibram eficiência computacional, precisão e escalabilidade. Neste post científico, exploraremos as duas principais estratégias utilizadas pelos algoritmos de montagem do genoma: a abordagem de Overlap-Layout-Consensus e as abordagens baseadas em gráficos de de Bruijn."
 author: Mateus B. Fiamenghi
 heroImage: https://cdn.the-scientist.com/assets/articleNo/71001/aImg/49506/droplet-amplification-a-o.jpg
-publishedAt: 2023-08-18
+publishedAt: 2024-01-22
 ---
 
-import { Image } from 'astro:assets';
+import { Image } from "@astrojs/image/components";
 
 A montagem do genoma é um processo fundamental na bioinformática que envolve a junção dos reads de DNA gerados por tecnologias de sequenciamento (normalmente NGS) no genoma completo do organismo sequenciado. Essa tarefa complexa requer o uso de algoritmos  que equilibram eficiência computacional, precisão e escalabilidade. Neste post, exploraremos as duas principais estratégias utilizadas pelos algoritmos de montagem do genoma: a abordagem de Overlap-Layout-Consensus (OLC) e a abordagem baseada em gráficos de de Bruijn.
 
