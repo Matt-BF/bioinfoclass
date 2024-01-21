@@ -32,7 +32,7 @@ const { Content } = await entry.render();
     <SocialSharing />
     <hr class="mx-auto my-5 w-1/2" />
     <Image
-      src={`${entry.data.heroImage}`}
+      src={entry.data.heroImage}
       format="webp"
       alt={`Hero image for ${entry.data.title}`}
       width={800}
@@ -48,8 +48,9 @@ const { Content } = await entry.render();
   </article>
   <hr class="mx-auto my-5 w-1/2" />
   <section class="mx-2 my-10 flex flex-col items-center justify-center gap-5">
-    <h2 class="text-4xl">
-      Se inscreva na nossa <span class="text-blue-500">Newsletter</span>!
+    <h2 class="text-center text-xl md:text-3xl lg:w-1/2">
+      Se você quer receber artigos como esse e outras novidades em primeira mão,
+      se inscreva na nossa <span class="text-blue-500">Newsletter</span>!
     </h2>
     <NewsletterForm client:load />
   </section>

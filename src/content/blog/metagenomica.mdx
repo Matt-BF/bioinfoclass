@@ -1,0 +1,56 @@
+---
+title: "O que é metagenômica?"
+description: "A montagem do genoma é um processo fundamental na genômica que envolve a junção das sequências fragmentadas de DNA geradas por tecnologias de sequenciamento em uma representação coerente do genoma de um organismo. Essa tarefa intricada requer algoritmos sofisticados que equilibram eficiência computacional, precisão e escalabilidade. Neste post científico, exploraremos as duas principais estratégias utilizadas pelos algoritmos de montagem do genoma: a abordagem de Overlap-Layout-Consensus e as abordagens baseadas em gráficos de de Bruijn."
+author: Mateus B. Fiamenghi
+heroImage: "./hero-images/ai_metagenomics_soil.png"
+publishedAt: 2024-01-22
+---
+
+import { Image } from 'astro:assets';
+import metagenomicsSchema from './text-images/metagenomica/metagenomics-schema.jpg'
+
+A metagenômica é um campo da bioinformática e da biologia molecular que nos permite estudar comunidades de organismos microbianos em seus ambientes naturais.
+
+A relevância da metagenômica vai além do mero aumento do conhecimento sobre a biodiversidade microbiana. Ela tem implicações significativas na compreensão das interações microbianas e seu impacto nos ecossistemas e na saúde humana. Por exemplo, o estudo do microbioma humano através da metagenômica tem revelado ligações importantes entre microrganismos e diversas condições de saúde.
+
+Para iniciantes em bioinformática, a metagenômica oferece uma oportunidade de explorar a biologia em um nível genômico sem as restrições dos métodos tradicionais. Este campo está se mostrando fundamental para avanços em áreas como medicina, agricultura e biotecnologia.
+
+## Por que usar uma abordagem metagenômica?
+
+Para estudar microrganismos, os cientistas tradicionalmente faziam uma coleta de amostra do ambiente de interesse e isolavam os organismos desta amostra cultivando-os em laboratório. Essa abordagem clássica ainda é muito utilizada e importante, porque nos permite estudar os microrganismos em detalhes e entender como eles se comportam em condições controladas, isolando genes e metabólitos que podem contribuir no ecossistema de onde vieram, e que podem ser utilizados em aplicações biotecnológicas ou médicas.
+
+No entanto, essa abordagem tem suas limitações. A maioria dos microrganismos não podem ser cultivados em laboratório, e os que podem ser cultivados podem ainda se comportar de maneira diferente do que em seu ambiente natural. Além disso, a cultura de microrganismos em laboratório é um processo trabalhoso, e requer conhecimento de situações ideais para o cultivo, como por exemplo, qual o melhor meio de cultura utilizar, quais nutrientes e aminoácidos adicionar neste meio, etc, o que encarece e dificulta o processo.
+
+A abordagem por metagenômica difere das técnicas tradicionais de microbiologia, pois não requer o cultivo de organismos em laboratório. Em vez disso, a metagenômica envolve a coleta de amostras do ambiente de interesse a ser estudado, como solo, água ou o microbioma humano, e o subsequente sequenciamento do DNA presente nessas amostras. Isso nos fornece um vislumbre abrangente e mais fidedigno da diversidade genética e das funções desempenhadas por esses microrganismos.
+
+<div class="flex flex-col items-center text-sm">
+  <Image
+    class="mb-0"
+    src={metagenomicsSchema}
+    alt="Esquema da metagenômica"
+    format="webp"
+    
+  />
+  Esquema das abordagens dependentes e independentes de cultura. Fonte: <a>https://doi.org/10.1016/j.csbj.2021.11.028</a>
+</div>
+
+## Quais são os desafios da metagenômica?
+
+Se para realizar um sequênciamento e montagem de um genoma de um organismo já é um processo complexo, imagine para um conjunto de organismos. É como resolver muitos quebra-cabeças nos quais os pedaços foram misturados. Para isso, os algoritmos de montagem precisam separar os pedaços de DNA de cada organismo e montar os genomas de cada um deles, o que a depender da amostra pode ser mais simples ou mais complexo. Amostras de solo, por exemplo, por terem uma altíssima biodiversidade e dificuldade de extração de DNA, são mais complexos de serem montados do que amostras de um lago por exemplo.
+
+
+
+## Possibilidades científicas
+
+A metagenômica hoje está bastante em alta, pois com o avanço das tecnologias de sequenciamento, muitos grupos de pesquisa estão coletando e sequenciando amostras dos mais variados ecossistemas. Isto também implica na deposição de uma grande quantidade de dados em repositórios públicos e consequentemente em possibilidades variadas de perguntas científicas a serem exploradas, assim como uma maior acessibilidade. Repositórios como o [IMG](https://img.jgi.doe.gov/) e o [MGnify](https://www.ebi.ac.uk/metagenomics) contém inúmeros estudos que podem ser explorados. Por conta da natureza do Big Data, muitas descobertas estão sendo feitas através de análises computacionais, como por exemplo, [o funcionamento de pequenas orfs](https://www.biorxiv.org/content/10.1101/2023.12.27.573469v1), [novos sistemas CRISPR](https://www.science.org/doi/10.1126/science.adi1910), [caracterização e predição estrutural de novas proteínas desconhecidas](https://www.nature.com/articles/s41586-023-06583-7), dentre outros estudos.
+
+## Algumas aplicações
+
+A metagenômica, ao permitir a análise direta do DNA extraído de amostras ambientais, oferece uma janela única para a compreensão dos ecossistemas microbianos. Ela nos permite observar como os microrganismos interagem entre si e com seu ambiente, fornecendo insights cruciais sobre os ciclos biogeoquímicos e a manutenção dos ecossistemas. A análise metagenômica de amostras de solo pode revelar como comunidades microbianas contribuem para a fertilidade do solo e a ciclagem de nutrientes, essenciais para a agricultura sustentável.
+
+Além do meio ambiente, a metagenômica tem um papel significativo na saúde humana. O estudo do microbioma humano é fundamental para entender várias doenças. A análise metagenômica pode revelar alterações no microbioma associadas a condições como obesidade, diabetes, doenças autoimunes e até distúrbios psiquiátricos. Além disso, pode ajudar na identificação de novos patógenos e na compreensão da resistência a antibióticos.
+
+
+## Conclusões
+
+O futuro da metagenômica é promissor e multidisciplinar. Pode-se esperar aplicações revolucionárias em campos como engenharia ambiental, onde a metagenômica pode ser usada para bio-monitoramento e biorremediação, e na medicina personalizada, com o desenvolvimento de terapias baseadas no microbioma. Além disso, a metagenômica pode contribuir para a descoberta de novas biomoléculas com aplicações industriais, como enzimas para biocombustíveis ou novos antibióticos.À medida que a tecnologia avança, podemos esperar descobertas ainda mais surpreendentes e aplicações inovadoras em diversos âmbitos.
