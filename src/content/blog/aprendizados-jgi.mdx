@@ -1,0 +1,32 @@
+---
+title: "Aprendizados sobre eficiência trabalhando no JGI"
+description: "Setembro marcou 1 ano desde que me mudei para os Estados Unidos e comecei a trabalhar no JGI (Joint Genome Institute). No dia a dia é difícil perceber o progresso em qualquer trabalho, especialmente no ramo da ciência, onde nossas conquistas são extremamente gradativas e incrementais, mas olhando para trás, percebo que tive muitos aprendizados que farão com que novos projetos caminhem de uma forma mais rápida e eficiente."
+author: Mateus B. Fiamenghi
+heroImage: "./hero-images/hero-aprendizados-jgi.webp"
+publishedAt: 2024-10-21
+---
+
+import { Image } from 'astro:assets';
+
+Setembro marcou 1 ano desde que me mudei para os Estados Unidos e comecei a trabalhar no JGI (Joint Genome Institute). No dia a dia é difícil perceber o progresso em qualquer trabalho, especialmente no ramo da ciência, onde nossas conquistas são extremamente gradativas e incrementais, mas olhando para trás, percebo que tive muitos aprendizados que farão com que novos projetos caminhem de uma forma mais rápida e eficiente. Gostaria de compartilhar aqui 5 aprendizados práticos que você pode implementar no seu dia a dia como bioinformata, que irão fazer com que você seja mais eficiente e utilize melhor os recursos computacionais nas suas mãos.
+
+## 1. Processe todos os dados do zero, para manter um padrão
+Frequentemente mesclamos dados já processados com dados novos em nossos trabalhos. Afinal, porque ter um retrabalho? Parece um gasto desnecessário de recursos computacionais. Porém, aprendi às duras penas que utilizar parte de dados já processados causa uma imensa dor de cabeça. Isso não quer dizer começar dos dados brutos (na maior parte do tempo)! Mas se você faz, por exemplo, uma predição gênica com uma versão de um programa, e os dados herdados estão numa outra versão (ou feitos com outro programa, ou baixados de um banco de dados, etc) você terá um trabalho grande para comparar as sequências, ids, headers, etc. Na maioria dos casos é mais rápido processar todas as sequências juntas. Assim você garante que os headers serão comparáveis, e as versões dos programas utilizados também, padronizando a análise e dando mais força ao seu paper.
+
+## 2. Rode as análises em tudo, e filtre o que precisa depois
+É muito mais fácil e rápido filtrar e retirar o que não será necessário após rodar uma análise do que precisar voltar e rodar a análise de novo caso seja necessário adicionar novos dados. Por experiência própria neste trabalho, tive que reprocessar dados 3 vezes no meio do projeto por conta de adições de novas sequências/bancos de interesse.
+
+## 3. Apague arquivos intermediários e temporários assim que terminou de utilizá-los
+Em algum momento do projeto, ou pelo menos ao finalizá-lo, você precisará limpar sua pasta de trabalho para disponibilizar os dados para publicação. Quantas vezes, na pressa, você utilizou scripts temporários, arquivos .txt com nomes crípticos para filtragem e tabelas intermediárias para chegar ao final de uma análise? Garanto que em menos de uma semana você irá esquecer porque eles existem, e não saberá se são importantes ou não, perdendo mais tempo do que necessário traçando o caminho que foi percorrido para chegar ao fim da análise. Por isso recomendo que assim que utilizar o script ou arquivo temporário você o delete. Além disso, irá otimizar o uso de espaço em disco.
+
+## 4. Comprima arquivos
+Esta dica vai ao encontro da anterior no quesito otimização de espaço. A maioria dos programas de bioinformática hoje conseguem ler arquivos zipados. Comprima seus FASTQs, FASTAs e tabelas, para ocupar menos espaço em disco, garantindo melhor uso dos servidores para todos os cientistas. Meus programas favoritos hoje para comprimir e descomprimir são o pigz (parallel gzip) e zstd (zstandard).
+
+
+
+## 5. Otimize seus downloads e geração de arquivos
+Estamos na era do big-data. É inviável na maioria dos casos fazer download de terabytes de dados brutos para um servidor, processá-los e mantê-los em disco local. Da mesma forma, muitos programas de bioinfo geram dezenas de arquivos intermediários que ficam no disco ocupando espaço sem necessidade. Para estes pontos tenho duas recomendações: a primeira é considerar o streaming dos dados brutos, filtrando-os à medida que vão sendo baixados, e salvando apenas o arquivo final processado. Por exemplo, se você está interessado em certos reads de um estudo, ou certas montagens depositadas no NCBI, ou ainda, sequências de no mínimo um certo tamanho, considere utilizar o seqkit grep e o seqkit seq para filtrar apenas os accessions de interesse. A segunda recomendação é apagar (ou pelo menos comprimir) arquivos intermediários que você sabe que não utilizará, e manter apenas os arquivos finais de interesse. 
+
+## Conclusão
+Espero que você tenha gostado dessa dicas! Me escreva uma mensagem em alguma das redes ou por email sobre o que você achou, e se concorda ou não com algum destes pontos! Não é uma verdade absoluta, mas são pontos que me ajudaram neste último ano, especialmente por estar dividindo servidores com centenas de outros cientistas, necessitando de um maior cuidado com as pipelines.
+
