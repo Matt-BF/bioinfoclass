@@ -61,7 +61,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="mx-auto flex w-1/2 flex-col gap-5 rounded-lg border p-5"
+      className="mx-auto mb-5 flex w-1/2 flex-col gap-5 rounded-lg border p-5"
       onSubmit={handleSubmit(onSubmit)}
     >
       <input
@@ -105,6 +105,7 @@ export default function ContactForm() {
       <input
         className="mx-auto rounded-lg bg-purple-400 p-4 text-white hover:cursor-pointer hover:bg-purple-300 "
         type="submit"
+        value="Enviar"
       />
 
       {status && <p className="text-center">{status}</p>}
