@@ -93,7 +93,6 @@ export default function ContactForm() {
       {errors.email && (
         <p className=" text-xs italic text-red-500">{errors.email?.message}</p>
       )}
-
       <label htmlFor="Sua Mensagem">Sua mensagem</label>
       <textarea
         {...register("message")}
@@ -107,6 +106,7 @@ export default function ContactForm() {
         className="mx-auto rounded-lg bg-purple-400 p-4 text-white hover:cursor-pointer hover:bg-purple-300 "
         type="submit"
       />
+
       {status && <p className="text-center">{status}</p>}
     </form>
   );

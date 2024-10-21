@@ -99,6 +99,7 @@ export default function NewsletterForm() {
       <input
         className="rounded-lg bg-purple-400 p-2 text-white hover:cursor-pointer hover:bg-purple-300 "
         type="submit"
+        value="Enviar"
       />
       {status && <p className="text-center">{status}</p>}
     </form>
