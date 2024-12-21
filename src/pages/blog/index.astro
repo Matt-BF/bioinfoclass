@@ -21,7 +21,7 @@ const sortedBlogEntries = blogEntries.sort((a, b) => {
     >
       {
         sortedBlogEntries.map((blogPostEntry) => (
-          <li class="flex max-w-sm flex-col rounded-md border shadow-md hover:border-blue-600">
+          <li class="flex max-w-sm md:h-80 lg:h-auto flex-col rounded-md border shadow-md hover:border-blue-600">
             <a href={`/blog/${blogPostEntry.slug}`}>
               <Image
                 src={blogPostEntry.data.heroImage}

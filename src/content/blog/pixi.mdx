@@ -1,0 +1,42 @@
+---
+title: "Adeus Conda, bem vindo Pixi!"
+description: "À medida que a tecnologia vai progredindo, nossos programas de estimação frequentemente ficam obsoletos. Após muitos anos utilizando e recomendando o conda (e mais recentemente o mamba) para meus alunos e colegas de trabalho, estou (novamente) migrando para um novo gerenciador de pacotes: o Pixi."
+author: Mateus B. Fiamenghi
+heroImage: "./hero-images/pixi.webp"
+publishedAt: 2024-12-21
+---
+
+import { Image } from 'astro:assets';
+
+À medida que a tecnologia vai progredindo, nossos programas de estimação frequentemente ficam obsoletos. Após muitos anos utilizando e recomendando o conda (e mais recentemente o mamba) para meus alunos e colegas de trabalho, estou (novamente) migrando para um novo gerenciador de pacotes: o Pixi.
+
+Trata-se de um gerenciador criado pelos mesmos desenvolvedores do mamba. O mamba, caso você nunca tenha utilizado, é uma versão extremamente mais rápida do gerenciador conda, e serve como uma substituição imediata (inclusive, você pode instalá-lo como um pacote dentro do conda, sem necessidade de migrar nada, e se beneficiar da melhoria em velocidade em resolução de dependências).
+
+Mas se o mamba é tão bom, porque migrar novamente? Realmente, não existe uma grande necessidade, e para ser sincero, o mamba ainda deve ser, na minha opinião, a primeira escolha de novatos, ou grupos que já estão acostumados com o conda, uma vez que é um modelo mais estabelecido de gerenciamento de pacotes, e o Pixi ainda estar em versão beta. Abaixo vou elencar os motivos pelos quais sinto que o Pixi (ou programas semelhantes) serão o futuro do gerenciamento de programas em bioinfo.
+
+
+
+## Um ambiente por projeto
+Contrastando com o conda/mamba, o ambiente de gerenciamento do Pixi não é global, mas é restrito ao projeto (ou a uma pasta) na qual a instalação dos pacotes ocorre. Toda a organização fica num diretório `.pixi` e gerenciado por um arquivo de texto `pixi.toml`, onde você define os pacotes de interesse (ou na linha de comando através do comando `pixi add [pacote]`). Nada de ficar lembrando o nome de ambientes, rode os programas através do comando `pixi run` e pronto!
+
+
+
+## Instalação e desinstalação simplificada
+Para apagar um ambiente, basta usar o comando `pixi clean` ou apagar a pasta `pixi` do projeto e recomeçar. Similarmente, o próprio Pixi é um simples binário, apagá-lo já o remove completamente do seu sistema
+
+
+## Velocidade
+Incrivelmente, o Pixi consegue ser mais rápido que o mamba para resolver as dependências entre programas, graças ao seu uso de otimizações em Rust, uma linguagem de programação bastante eficiente. Para programas em python, ele utiliza o uv, o mais rápido gerenciador de dependências para python atualmente.
+
+
+
+Mas como lido com programas que precisam de diferentes versões de pacotes?
+No arquivo `pixi.toml` você consegue criar "sub-ambientes" com versões e pacotes específicos e chamá-los com a flag `--environment`.
+
+
+
+## Instalação e gerenciamento global de pacotes
+Às vezes precisamos de programas globais, ou seja, que são utilizados para todos os projetos, ou até mesmo para facilitar nossa vida. Se você usa um MacBook, deve conhecer o homebrew. O `pixi global install` age de forma semelhante, mas funciona em qualquer sistema operacional.
+
+## Conclusão
+Como disse no início, o Pixi ainda está em versão beta, e embora esteja estável o suficiente para ter completamente substituído outros gerenciadores no meu dia a dia, talvez ainda seja cedo para você migrar. A boa notícia é que ele pode ser instalado junto ao conda/mamba sem conflitos, então você pode testá-lo aos poucos sem muitos riscos! Foi o que eu fiz no começo!
