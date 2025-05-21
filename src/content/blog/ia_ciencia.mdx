@@ -1,0 +1,42 @@
+---
+title: "As melhores IAs para ciência"
+description: "Cada modelo de linguagem (LLM) possui características únicas, sendo mais adequado para determinadas tarefas. Alguns estão disponíveis gratuitamente, enquanto outros oferecem integrações pagas para uma experiência mais robusta. Há ainda aqueles que podem ser baixados localmente para maior privacidade e customização."
+author: Mateus B. Fiamenghi
+heroImage: "./hero-images/hero-ia_ciencia.webp"
+publishedAt: 2025-05-21
+---
+
+import { Image } from 'astro:assets';
+
+A cada semana parece que surge um modelo de inteligência artificial (IA) mais impressionante no mercado. Isto amplia as possibilidades para edição de textos, escrita de códigos e até mesmo a [geração de hipóteses científicas](https://blog.google/feed/google-research-ai-co-scientist/).
+
+Cada modelo de linguagem (LLM) possui características únicas, sendo mais adequado para determinadas tarefas. Alguns estão disponíveis gratuitamente, enquanto outros oferecem integrações pagas para uma experiência mais robusta. Há ainda aqueles que podem ser baixados localmente para maior privacidade e customização.
+
+Mas para nosso contexto científico, como realizar a escolha? A revista Nature escreveu [uma matéria](https://www.nature.com/articles/d41586-025-00437-0) para ajudar nesta tarefa, e nesta Newsletter quero resumir os principais pontos dela.
+
+
+## Os principais modelos e suas aplicações
+### o3-mini (o Raciocinador)
+
+Em 2022, a OpenAI, popularizou os LLMs com o ChatGPT. Inicialmente utilizado para consultas e auxílio na escrita, os LLMs evoluíram para desempenhar tarefas técnicas e científicas mais complexas graças aos novos modelos de raciocínio, como o o1 e o o3, que seguem um processo de "cadeia de pensamento" para simular o raciocínio humano e superar desafios em ciências e matemática. Após o lançamento de um modelo concorrente pela start-up chinesa DeepSeek, a OpenAI introduziu ferramentas adicionais, incluindo o o3-mini (disponível gratuitamente para usuários registrados) e o "deep research", que ajuda assinantes a produzir relatórios com informações de diversas fontes. Especialistas reconhecem que, embora esses modelos sejam eficazes em desvendar conceitos complexos e resolver problemas técnicos, ainda não alcançam o desempenho de um cientista treinado.
+
+### DeepSeek-R1 (o Versátil)
+
+Este modelo surpreendeu o mundo por oferecer um desempenho semelhante ao o1 da OpenAI, mas com um custo muito menor e a possibilidade de personalização. Além disso, um diferencial é seus pesos são abertos, ou seja, embora os dados de treino sejam fechados, qualquer um pode baixar o modelo e customizá-lo para seus objetivos pessoais. O R1 estabeleceu um "novo paradigma", dando acessibilidade para pesquisadores e instituições com poucos recursos e permitindo que comunidades construam seus próprios modelos especializados.
+
+### Llama (o Trabalho Pesado)
+
+O Llama, lançado pela Meta AI em 2023 com pesos abertos, se tornou um modelo de referência na comunidade acadêmica, sendo baixado mais de 600 milhões de vezes apenas no Hugging Face. Essa acessibilidade permite que pesquisadores rodem o modelo em servidores locais, essencial para trabalhar com dados sensíveis. O Llama tem sido adaptado para tarefas como previsão de estruturas cristalinas e simulação de computadores quânticos. No entanto, a necessidade de solicitar acesso ao modelo gera uma pequena fricção, fazendo com que alternativas como OLMo e Qwen sejam, por vezes, preferidas para pesquisas. Além disso, o modelo V3, subjacente ao DeepSeek, também é considerado um competidor relevante na construção de modelos científicos.
+
+### Claude 3.5 Sonnet (o Programador)
+
+O Claude, desenvolvido pela Anthropic, é bastante valorizado por sua habilidade de escrever código e interpretar gráficos. Além de seu desempenho técnico, o modelo é elogiado por preservar o sentido original dos textos ao simplificar a linguagem, o que é útil, por exemplo, na elaboração de propostas e pedidos de financiamento, comentários em códigos ou mensagens de commits no git. Em desafios de programação de áreas como bioinformática e química computacional, o Claude 3.5 Sonnet mostrou bons resultados. Embora esteja disponível gratuitamente como chatbot online, o acesso completo ao modelo é feito via API paga, o que pode levar alguns a preferirem outros modelos open-source.
+
+### OLMo 2 (o Realmente Aberto)
+
+Pesquisadores que desejam compreender o funcionamento de um LLM precisam de modelos de código aberto, que fornecem não só os pesos, mas também os dados de treinamento e o código utilizado em seu desenvolvimento. Essa transparência permite identificar as fontes de viés presentes nos dados e otimizar a eficiência do algoritmo, embora seja necessário um certo conhecimento técnico para utilizá-los. Atualmente, o modelo de melhor desempenho nessa categoria é o OLMo 2. Além disso, caso haja restrições legais quanto ao uso de conteúdos protegidos por direitos autorais no treinamento de IAs, os modelos treinados com conjuntos de dados "permissivos", que permitem reutilização e modificação (como o [DeepSeek-R1 recriado pela iniciativa da Hugging Face](https://huggingface.co/blog/open-r1/update-1)), poderão ser os únicos seguros para uso.
+
+
+Apesar de seus avanços, todos os modelos de IA apresentam erros e devem ser usados com cuidado. Nenhum modelo é um substituto para pensamento crítico e boas práticas científicas. Utilize-os com parcimônia e consciência e você com certeza irá potencializar seu trabalho.
+
+Até a próxima edição!
