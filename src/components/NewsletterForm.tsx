@@ -2,7 +2,6 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const validationSchema = z.object({
   name: z.string().min(1, { message: "Coloque seu nome" }),
@@ -11,9 +10,6 @@ const validationSchema = z.object({
   }),
   access_key: z.string(),
   botcheck: z.boolean(),
-  h_captcha_response: z
-    .string()
-    .min(1, { message: "Por favor, complete o hCaptcha" }),
 });
 
 type ValidationSchema = z.infer<typeof validationSchema>;
@@ -98,19 +94,6 @@ export default function NewsletterForm() {
         {errors.email && (
           <p className=" text-lg italic text-red-500 md:text-sm">
             {errors.email?.message}
-          </p>
-        )}
-      </div>
-      <div>
-        <HCaptcha
-          sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-          onVerify={(token) => setValue("h_captcha_response", token)}
-          onError={() => setValue("h_captcha_response", "")}
-          reCaptchaCompat={false}
-        />
-        {errors.h_captcha_response && (
-          <p className="text-lg italic text-red-500 md:text-sm">
-            {errors.h_captcha_response?.message}
           </p>
         )}
       </div>
