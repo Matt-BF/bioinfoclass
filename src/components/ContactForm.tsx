@@ -2,6 +2,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const validationSchema = z.object({
   name: z.string().min(1, { message: "Coloque seu nome" }),
@@ -11,7 +12,9 @@ const validationSchema = z.object({
   message: z.string().min(1, { message: "Coloque sua mensagem" }),
   access_key: z.string(),
   botcheck: z.boolean(),
-  "h-captcha-response": z.string().min(1, { message: "Por favor, complete o hCaptcha" }),
+  h_captcha_response: z
+    .string()
+    .min(1, { message: "Por favor, complete o hCaptcha" }),
 });
 
 type ValidationSchema = z.infer<typeof validationSchema>;
@@ -63,6 +66,7 @@ export default function ContactForm() {
 
   return (
     <form
+      id="contactForm"
       className="mx-auto mb-5 flex w-1/2 flex-col gap-5 rounded-lg border p-5"
       onSubmit={handleSubmit(onSubmit)}
     >
@@ -104,14 +108,18 @@ export default function ContactForm() {
       {errors.message && (
         <p className="text-xs italic text-red-500">{errors.message?.message}</p>
       )}
-      <div className="h-captcha" data-captcha="true"></div>
-      <input
-        type="hidden"
-        {...register("h-captcha-response")}
-      />
-      {errors["h-captcha-response"] && (
-        <p className="text-xs italic text-red-500">{errors["h-captcha-response"]?.message}</p>
-      )}
+      <div>
+        <HCaptcha
+          sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+          reCaptchaCompat={false}
+          onVerify={(token) => setValue("h_captcha_response", token)}
+        />
+        {errors.h_captcha_response && (
+          <p className="text-lg italic text-red-500 md:text-sm">
+            {errors.h_captcha_response?.message}
+          </p>
+        )}
+      </div>
       <input
         className="mx-auto rounded-lg bg-purple-400 p-4 text-white hover:cursor-pointer hover:bg-purple-300 "
         type="submit"
