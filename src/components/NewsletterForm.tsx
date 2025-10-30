@@ -1,7 +1,7 @@
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const validationSchema = z.object({
@@ -20,7 +20,6 @@ type ValidationSchema = z.infer<typeof validationSchema>;
 
 export default function NewsletterForm() {
   const [status, setStatus] = useState("");
-  const captchaRef = useRef<HCaptcha>(null);
   const {
     register,
     handleSubmit,
@@ -47,7 +46,6 @@ export default function NewsletterForm() {
       setStatus(
         "Sua mensagem foi recebida! Em breve entraremos em contato com você!"
       );
-      captchaRef.current?.resetCaptcha();
     } else {
       setStatus(result.message);
     }
@@ -105,7 +103,6 @@ export default function NewsletterForm() {
       </div>
       <div>
         <HCaptcha
-          ref={captchaRef}
           sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
           onVerify={(token) => setValue("h_captcha_response", token)}
           onError={() => setValue("h_captcha_response", "")}
