@@ -1,7 +1,8 @@
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const validationSchema = z.object({
   name: z.string().min(1, { message: "Coloque seu nome" }),
@@ -11,16 +12,19 @@ const validationSchema = z.object({
   message: z.string().min(1, { message: "Coloque sua mensagem" }),
   access_key: z.string(),
   botcheck: z.boolean(),
+  h_captcha_response: z.string().min(1, { message: "Por favor, complete o hCaptcha" }),
 });
 
 type ValidationSchema = z.infer<typeof validationSchema>;
 
 export default function ContactForm() {
   const [status, setStatus] = useState("");
+  const captchaRef = useRef<HCaptcha>(null);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm<ValidationSchema>({
     resolver: zodResolver(validationSchema),
   });
@@ -42,6 +46,7 @@ export default function ContactForm() {
       setStatus(
         "Sua mensagem foi recebida! Em breve entraremos em contato com você!"
       );
+      captchaRef.current?.resetCaptcha();
     } else {
       setStatus(result.message);
     }
@@ -102,6 +107,20 @@ export default function ContactForm() {
       {errors.message && (
         <p className="text-xs italic text-red-500">{errors.message?.message}</p>
       )}
+      <div>
+        <HCaptcha
+          ref={captchaRef}
+          sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+          onVerify={(token) => setValue("h_captcha_response", token)}
+          onError={() => setValue("h_captcha_response", "")}
+          reCaptchaCompat={false}
+        />
+        {errors.h_captcha_response && (
+          <p className="text-xs italic text-red-500">
+            {errors.h_captcha_response?.message}
+          </p>
+        )}
+      </div>
       <input
         className="mx-auto rounded-lg bg-purple-400 p-4 text-white hover:cursor-pointer hover:bg-purple-300 "
         type="submit"
