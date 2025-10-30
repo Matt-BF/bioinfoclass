@@ -10,6 +10,7 @@ const validationSchema = z.object({
   }),
   access_key: z.string(),
   botcheck: z.boolean(),
+  "h-captcha-response": z.string().min(1, { message: "Por favor, complete o hCaptcha" }),
 });
 
 type ValidationSchema = z.infer<typeof validationSchema>;
@@ -97,6 +98,14 @@ export default function NewsletterForm() {
           </p>
         )}
       </div>
+      <div className="h-captcha" data-captcha="true"></div>
+      <input
+        type="hidden"
+        {...register("h-captcha-response")}
+      />
+      {errors["h-captcha-response"] && (
+        <p className="text-xs italic text-red-500">{errors["h-captcha-response"]?.message}</p>
+      )}
       <input
         className="rounded-lg bg-purple-400 p-2 text-white hover:cursor-pointer hover:bg-purple-300 "
         type="submit"
