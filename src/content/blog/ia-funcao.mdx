@@ -1,0 +1,60 @@
+---
+title: "Uma IA para cada função"
+description: "No último post falamos sobre um artigo da Nature, que discutia as melhores IAs para ciência, e quais eram mais adequadas para cada função.  Este tema de hoje será bastante parecido, mas como a cada semana vemos alterações e melhorias nas capacidades das IAs, falaremos sobre a minha experiência nos últimos meses utilizando as IAs para facilitar meus trabalhos no dia a dia."
+author: Mateus B. Fiamenghi
+heroImage: "./hero-images/hero-ia-funcao.png"
+publishedAt: 2025-11-13
+---
+
+import { Image } from 'astro:assets';
+
+No [último post](https://www.bioinfoclass.com/blog/ia_ciencia) falamos sobre um artigo da Nature, que discutia as melhores IAs para ciência, e quais eram mais adequadas para cada função.  Este tema de hoje será bastante parecido, mas como a cada semana vemos alterações e melhorias nas capacidades das IAs, falaremos sobre a minha experiência nos últimos meses utilizando as IAs para facilitar meus trabalhos no dia a dia. 
+
+Trabalhar no JGI me trouxe muitos privilégios pessoais e profissionais, e um dos mais significativos é a parceria do laboratório com as empresas que criam os modelos de linguagem. Com esta parceria, todos os cientistas do instituto têm acesso à uma chave de API com um alto limite mensal, que pode ser utilizada para acessar quase todos os modelos, e utilizá-los em diferentes ferramentas, como o VSCode, Jupyter, Claude Code, Cline, etc. Esta flexibilidade de escolha de modelos e a possibilidade de usar nas minhas ferramentas favoritas faz o trabalho do dia a dia mais prazeroso e mais produtivo.
+
+
+## Quais os modelos que utilizo com mais frequência?
+### Anthropic Claude Sonnet 4.5
+
+No momento deste post, é o campeão de "raciocínio". É o modelo que utilizo para me explicar conceitos, gerar planos para solucionar um problema, explicar quais melhorias realizar no meu código, e implementação de algoritmos mais complexos.
+
+### Google Gemini Flash 2.5
+
+É o modelo mais barato que temos até agora, o mais veloz e com a maior capacidade de contexto possível (1 milhão de tokens, os modelos das outras empresas normalmente possuem 200 mil). Normalmente utilizo este modelo em projetos grandes, com muito código, ou para simples edições ou otimizações do meu código
+
+
+### OpenAI o4-mini
+
+Bem comparável ao Claude Sonnet, utilizo este modelo para funções semelhantes ao Claude quando ele não atende minhas necessidades
+
+
+
+## Mas para quem não possui uma chave? Como não ficar para trás?
+
+Obviamente nem todos tem o privilégio do trabalho disponibilizar acesso aos modelos mais recentes sem custo adicional. Deixo aqui abaixo algumas ideias de como utilizar as IAs a um custo baixo, ou sem custo. Numa próxima edição irei dar mais detalhes destas alternativas!
+
+
+### Cursor
+
+É um "fork" do editor VSCode com foco no uso de IAs. Custa 20 dólares por mês, mas disponibiliza a versão premium de forma gratuita por 1 ano para estudantes de certas universidades
+
+
+### Github Copilot
+
+Dá acesso a vários modelos pela interface do VSCode, incluindo o seu famoso modelo de "autocomplete" de código. Embora custe 10 dólares por mês, é gratuito para quem contribuiu para algum projeto open source. Eu "acidentalmente" tenho essa versão grátis por ter contribuído pacotes de python para o conda-forge e bioconda. Então caso haja algum pacote que você gostaria de ver numa dessas plataformas, pense em contribuir para a comunidade adicionando-o em algum desses repositórios!
+
+
+### Gemini CLI
+
+Ferramenta do Google para uso de IA no terminal, muito semelhante ao Claude Code. Apenas logando com sua conta pessoal do Google já te dá acesso a 100 requests/dia do Gemini 2.5 Pro, e 1000 requests/dia do Google 2.5 Flash-Lite.
+
+
+### Self-hosting
+
+Existem vários modelos abertos, que embora não sejam tão competitivos com os modelos proprietários, quebram um bom galho. Programas como o Ollama e LM Studio permitem que você rode modelos de ponta, como o DeepSeek, Gemma e Qwen localmente no seu computador. Recentemente, a OpenAI também lançou os modelos abertos gpt-oss-20b e gpt-oss-120b que também são opções extremamente boas. Modelos de "autocomplete" de código também estão disponíveis.
+
+
+## Conclusão
+Apesar de seus avanços, todos os modelos de IA apresentam erros e devem ser usados com cuidado. Nenhum modelo é um substituto para pensamento crítico e boas práticas científicas, por isso sempre cheque os outputs e utilize-os para melhorar sua produtividade!
+
+Até a próxima edição!
