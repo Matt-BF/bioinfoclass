@@ -14,34 +14,53 @@ import NewsletterForm from "../components/NewsletterForm";
   <main>
     <!-- Hero section -->
     <section
-      class="flex h-[80vh] items-center justify-center bg-neutral-600 bg-[url('/src/images/bioinfo-hero.jpg')] bg-cover bg-blend-overlay"
+      class="relative flex h-[85vh] items-center justify-center overflow-hidden bg-[url('/src/images/bioinfo-hero.jpg')] bg-cover bg-blend-multiply"
+      style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(30, 58, 138, 0.6)), url('/src/images/bioinfo-hero.jpg'); background-size: cover, cover;"
     >
-      <div class="flex flex-col items-center justify-center">
-        <h1 class="mb-10 text-center text-5xl text-white">
-          Aprenda <span class="text-5xl text-blue-300">Bioinformática</span><br
+      <!-- Additional gradient overlay for better text contrast -->
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-blue-950/40"></div>
+
+      <div class="relative z-10 flex flex-col items-center justify-center px-4">
+        <h1 class="mb-6 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+          Aprenda <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Bioinformática</span><br
           />
-          e analise seus dados biológicos com confiança
+          e analise seus dados com<br class="hidden sm:block" />
+          <span class="text-cyan-400">confiança</span>
         </h1>
-        <div class="flex justify-center gap-5">
-          <!-- <button
-            class="rounded-xl bg-blue-500 p-4 text-white hover:bg-blue-400"
-            >Quero aprender!</button
-          > -->
+        <p class="mt-6 text-center text-lg md:text-xl text-slate-200 max-w-2xl leading-relaxed">
+          Aprenda com quem trabalha na prática. Soluções reais para desafios científicos.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="mailto:contato@bioinfoclass.com"
-            class="rounded-xl bg-blue-500 p-4 text-lg text-white hover:bg-blue-400"
+            class="rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-3 text-lg font-semibold text-white shadow-lg hover:shadow-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
             >Conversar com a equipe</a
           >
+          <a
+            href="#services"
+            class="rounded-lg border-2 border-cyan-400 px-8 py-3 text-lg font-semibold text-cyan-400 hover:bg-cyan-400/10 transition-all duration-300"
+            >Conhecer Serviços</a
+          >
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <div class="flex flex-col items-center gap-2">
+          <span class="text-sm text-cyan-400 font-medium">Saiba mais</span>
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
         </div>
       </div>
     </section>
 
     <!-- Services section -->
-    <section class="py-10">
-      <h2 class="text-center text-4xl">
-        O que <span class="text-blue-500">oferecemos</span>?
+    <section id="services" class="py-12 md:py-16">
+      <h2 class="text-center text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+        O que <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">oferecemos</span>?
       </h2>
-      <div class="mx-5 mt-10 grid gap-32 md:mx-32 lg:grid-cols-3">
+      <div class="mx-5 mt-12 grid gap-6 md:mx-32 md:gap-8 lg:grid-cols-3 lg:gap-12">
         <Card icon="ic:outline-slow-motion-video">
           <h3 class="text-center text-lg">
             Conteúdo, videoaulas e tutoriais em <span class="text-blue-500"
@@ -67,11 +86,11 @@ import NewsletterForm from "../components/NewsletterForm";
     </section>
 
     <!-- Attributes section -->
-    <section class="mt-10 pb-10">
-      <h2 class="pt-10 text-center text-4xl">
-        Por que a <span class="text-blue-500">Bioinfoclass</span>?
+    <section class="py-12 md:py-16">
+      <h2 class="text-center text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+        Por que a <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">Bioinfoclass</span>?
       </h2>
-      <div class="mx-5 mt-10 grid gap-28 md:mx-64 lg:grid-cols-2">
+      <div class="mx-5 mt-12 grid gap-6 md:mx-auto md:max-w-6xl md:gap-8 lg:grid-cols-2 lg:gap-12">
         <Card icon="eos-icons:data-scientist">
           <h3 class="text-center text-lg">
             Aprenda com quem trabalha <span class="text-blue-500"
@@ -103,75 +122,92 @@ import NewsletterForm from "../components/NewsletterForm";
     </section>
 
     <!-- Instructor section -->
-    <section class="relative mt-10 bg-blue-950">
-      <h2 class="py-5 text-center text-4xl text-white">
-        Um pouco sobre a Bioinfoclass
+    <section class="relative py-16 md:py-20 bg-gradient-to-r from-blue-950 to-slate-900">
+      <h2 class="text-center text-4xl md:text-5xl font-bold text-white mb-12">
+        Um pouco sobre a <span class="text-cyan-400">Bioinfoclass</span>
       </h2>
       <div
-        class="mx-5 mt-10 grid justify-center gap-5 pb-10 md:ml-20 md:grid-cols-2"
+        class="mx-5 md:mx-auto md:max-w-6xl grid justify-center gap-8 md:gap-12 md:grid-cols-2 items-center"
       >
         <div
-          class="flex flex-col items-center justify-center gap-5 text-white md:ml-10 md:items-start"
+          class="flex flex-col items-center justify-center gap-6 text-white md:items-start order-2 md:order-1"
         >
-          <p class="rounded-lg bg-purple-400 p-5 text-justify">
-            Muito prazer, sou Mateus Fiamenghi (Matt)! Sou doutor pela UNICAMP
-            em Genética e Biologia Molecular e trabalho com bioinformática desde
-            2016. Desde aquela época fiquei fascinado e apaixonado pela área!
-            Aprendi por conta a programar em Python e JavaScript e busco sempre
-            me aprimorar em novas facetas do mundo da programação. Comecei a
-            Bioinfoclass para compartilhar meu conhecimento e ajudar biólogos
-            que também vieram da bancada como eu a entenderem melhor o mundo da
-            bioinfo.
-            <div class="flex gap-5">
+          <div class="rounded-xl bg-gradient-to-br from-cyan-400/20 to-blue-500/20 border border-cyan-400/30 p-8">
+            <p class="text-justify text-lg leading-relaxed">
+              Muito prazer, sou <span class="font-bold text-cyan-400">Mateus Fiamenghi (Matt)</span>! Sou doutor pela UNICAMP
+              em Genética e Biologia Molecular e trabalho com bioinformática desde
+              2016. Desde aquela época fiquei fascinado e apaixonado pela área!
+            </p>
+            <p class="mt-4 text-justify text-lg leading-relaxed">
+              Aprendi por conta a programar em Python e JavaScript e busco sempre
+              me aprimorar em novas facetas do mundo da programação. Comecei a
+              Bioinfoclass para compartilhar meu conhecimento e ajudar biólogos
+              que também vieram da bancada como eu a entenderem melhor o mundo da
+              bioinfo.
+            </p>
+            <div class="flex gap-4 mt-6">
               <a
                 href="https://github.com/Matt-BF"
                 target="_blank"
                 rel="noopener"
+                class="transition-all duration-300 hover:scale-110"
+                title="GitHub"
               >
                 <Icon
                   name="mdi:github"
-                  class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
+                  class="w-12 rounded-full bg-cyan-400 p-2 text-blue-950 hover:bg-blue-400"
                 />
               </a>
               <a
                 href="http://lattes.cnpq.br/9005713927447046"
                 target="_blank"
                 rel="noopener"
+                class="transition-all duration-300 hover:scale-110"
+                title="Currículo Lattes"
               >
                 <Icon
                   name="mdi:school-outline"
-                  class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
+                  class="w-12 rounded-full bg-cyan-400 p-2 text-blue-950 hover:bg-blue-400"
                 />
               </a>
               <a
                 href="https://www.linkedin.com/in/mateus-fiamenghi-584867174/"
                 target="_blank"
                 rel="noopener"
+                class="transition-all duration-300 hover:scale-110"
+                title="LinkedIn"
               >
                 <Icon
                   name="mdi:linkedin"
-                  class="w-12 rounded-full bg-purple-400 p-2 hover:bg-blue-500"
+                  class="w-12 rounded-full bg-cyan-400 p-2 text-blue-950 hover:bg-blue-400"
                 />
               </a>
             </div>
-          </p>
+          </div>
         </div>
         <Image
           src={matt}
-          alt="Matt"
-          class="z-40 order-first rounded-full md:order-last lg:w-2/5"
+          alt="Mateus Fiamenghi, founder of Bioinfoclass"
+          class="z-40 order-1 md:order-2 rounded-2xl shadow-2xl md:shadow-none w-48 sm:w-64 lg:w-72 mx-auto"
         />
       </div>
     </section>
 
     <!-- Testimonials when we have them -->
     <!-- Newsletter -->
-    <section class="mx-2 my-10 flex flex-col items-center justify-center gap-5">
-      <h2 class="text-center text-xl md:text-3xl lg:w-1/2">
-        Acompanhe de perto as novidades no mundo da Bioinfo e nossos artigos se
-        inscrevendo em nossa <span class="text-blue-500">Newsletter</span>!
-      </h2>
-      <NewsletterForm client:load />
+    <section class="py-16 md:py-20 bg-gradient-to-b from-slate-50 to-slate-100">
+      <div class="mx-5 md:mx-auto md:max-w-4xl flex flex-col items-center justify-center gap-8">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            Mantenha-se <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">atualizado</span>
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Receba as novidades sobre bioinformática, tutoriais exclusivos e atualizações de cursos
+            direto na sua caixa de entrada.
+          </p>
+        </div>
+        <NewsletterForm client:load />
+      </div>
     </section>
   </main>
 </Layout>

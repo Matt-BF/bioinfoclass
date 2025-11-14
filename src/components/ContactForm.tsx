@@ -67,7 +67,7 @@ export default function ContactForm() {
   return (
     <form
       id="contactForm"
-      className="mx-auto mb-5 flex w-1/2 flex-col gap-5 rounded-lg border p-5"
+      className="mx-auto mb-5 flex w-full max-w-2xl flex-col gap-5 rounded-lg border p-5"
       onSubmit={handleSubmit(onSubmit)}
     >
       <input
@@ -84,7 +84,7 @@ export default function ContactForm() {
       <label htmlFor="name">Seu nome</label>
       <input
         {...register("name")}
-        className="p-2 focus:outline-purple-400"
+        className="p-2 focus:outline-cyan-400"
         placeholder="ex: João da Silva"
       />
       {errors.name && (
@@ -93,7 +93,7 @@ export default function ContactForm() {
       <label htmlFor="email">Seu Email</label>
       <input
         {...register("email")}
-        className="p-2 focus:outline-purple-400"
+        className="p-2 focus:outline-cyan-400"
         placeholder="ex: joao@gmail.com"
       />
       {errors.email && (
@@ -102,7 +102,7 @@ export default function ContactForm() {
       <label htmlFor="Sua Mensagem">Sua mensagem</label>
       <textarea
         {...register("message")}
-        className="h-32 p-5 focus:outline-purple-400"
+        className="h-32 p-5 focus:outline-cyan-400"
         placeholder="Escreva sua mensagem para nós por aqui"
       />
       {errors.message && (
@@ -121,7 +121,7 @@ export default function ContactForm() {
         )}
       </div>
       <input
-        className="mx-auto rounded-lg bg-purple-400 p-4 text-white hover:cursor-pointer hover:bg-purple-300 "
+        className="mx-auto rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-4 text-white font-semibold hover:cursor-pointer hover:from-cyan-600 hover:to-blue-600 transition-all duration-300"
         type="submit"
         value="Enviar"
       />

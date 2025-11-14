@@ -10,8 +10,8 @@ const { icon, extraTwClasses } = Astro.props;
 ---
 
 <div
-  class={`flex flex-col items-center  shadow-lg shadow-purple-200 rounded-lg p-5 ${extraTwClasses}`}
+  class={`flex flex-col items-center shadow-md shadow-slate-200 rounded-lg p-5 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-slate-300 hover:scale-105 ${extraTwClasses}`}
 >
-  <Icon class="mb-5 w-20 text-purple-600" name={icon} />
+  <Icon class="mb-5 w-20 text-cyan-600 transition-transform duration-300" name={icon} />
   <slot />
 </div>

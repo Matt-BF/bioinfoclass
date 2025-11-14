@@ -12,28 +12,28 @@ const sortedBlogEntries = blogEntries.sort((a, b) => {
   title="BioinfoClass - Blog"
   description="Confira nossos posts, dicas e conteúdo"
 >
-  <main>
-    <h1 class="mb-20 mt-10 text-center text-3xl">
-      Confira nosso <span class="text-blue-600">blog</span>!
+  <main class="py-12 md:py-16">
+    <h1 class="mb-12 text-center text-4xl md:text-5xl font-bold text-slate-900">
+      Confira nosso <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">blog</span>!
     </h1>
     <ul
-      class="mx-10 mb-20 grid items-center justify-center gap-5 md:grid-cols-3"
+      class="mx-5 mb-20 grid items-center justify-center gap-6 md:gap-8 md:grid-cols-3 lg:mx-10"
     >
       {
         sortedBlogEntries.map((blogPostEntry) => (
-          <li class="flex max-w-sm md:h-80 lg:h-auto flex-col rounded-md border shadow-md hover:border-blue-600">
+          <li class="flex h-full max-w-sm flex-col rounded-lg border border-slate-200 shadow-md hover:shadow-lg hover:border-cyan-400 transition-all duration-300">
             <a href={`/blog/${blogPostEntry.slug}`}>
               <Image
                 src={blogPostEntry.data.heroImage}
                 alt={`Hero image for ${blogPostEntry.data.title}`}
-                class="mb-5 h-48 w-full rounded-md"
+                class="mb-5 h-48 w-full rounded-t-lg object-cover"
               />
-              <h3 class="mx-5 text-center text-lg text-blue-600">
+              <h3 class="mx-5 text-center text-lg font-semibold text-slate-900 hover:text-cyan-600 transition-colors">
                 {blogPostEntry.data.title}
               </h3>
             </a>
             <time
-              class="mb-2 mr-2 text-right text-sm"
+              class="mb-2 mr-5 text-right text-sm text-slate-600 mt-auto"
               datetime={blogPostEntry.data.publishedAt.toISOString()}
             >
               <span>Publicado em </span>{" "}
