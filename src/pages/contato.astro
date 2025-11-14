@@ -7,10 +7,15 @@ import Layout from "../layouts/Layout.astro";
   title="Bioinfoclass - Contato"
   description="Preencha o formulário de contato e nossa equipe responderá o mais rápido possível para sanar suas dúvidas"
 >
-  <section class="flex flex-col items-center justify-center">
-    <h1 class="mb-20 mt-5 text-center text-3xl">
-      Entre em <span class="text-blue-500">contato</span> conosco
+  <section class="flex flex-col items-center justify-center py-16 md:py-20">
+    <h1 class="mb-12 text-center text-4xl md:text-5xl font-bold text-slate-900">
+      Entre em <span
+        class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+        >contato</span
+      > conosco
     </h1>
-    <ContactForm client:load />
+    <div class="w-full max-w-2xl mx-5">
+      <ContactForm client:load />
+    </div>
   </section>
 </Layout>

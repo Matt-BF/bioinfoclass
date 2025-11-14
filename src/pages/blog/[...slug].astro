@@ -21,37 +21,40 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title} description={entry.data.description}>
   <a
-    class="mb-10 flex w-24 items-center gap-2 rounded-md border border-slate-200 p-2 text-center hover:bg-slate-200 md:ml-40"
+    class="mb-10 flex w-24 items-center gap-2 rounded-lg border border-cyan-400 bg-cyan-400/5 p-2 text-center text-cyan-600 hover:bg-cyan-400/10 transition-all duration-300 md:ml-40"
     href="/blog"
     ><span>
       <Icon class="w-5" name="mdi:arrow-left-thin-circle-outline" />
     </span>Voltar
   </a>
   <article class="flex flex-col items-center justify-center">
-    <h1 class="my-10 text-center text-3xl text-blue-500">{entry.data.title}</h1>
+    <h1 class="my-10 text-center text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">{entry.data.title}</h1>
     <SocialSharing />
-    <hr class="mx-auto my-5 w-1/2" />
+    <hr class="mx-auto my-5 w-1/2 border-slate-200" />
     <Image
       src={entry.data.heroImage}
       format="webp"
       alt={`Hero image for ${entry.data.title}`}
       width={800}
       height={400}
+      class="rounded-lg shadow-md"
     />
 
     <div
-      class="prose mx-5 mb-10 mt-10 text-justify text-lg first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 prose-headings:text-blue-600 prose-a:text-blue-500 prose-a:no-underline hover:prose-a:text-blue-400"
+      class="prose prose-slate mx-5 mb-10 mt-10 max-w-3xl text-justify text-lg first-letter:float-left first-letter:mr-3 first-letter:text-5xl first-letter:font-bold first-letter:text-cyan-600 prose-headings:text-slate-900 prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:text-cyan-700 prose-strong:text-slate-900 prose-code:text-slate-900 prose-pre:bg-slate-100 prose-pre:text-slate-900"
     >
       <Content />
     </div>
     <SocialSharing />
   </article>
-  <hr class="mx-auto my-5 w-1/2" />
-  <section class="mx-2 my-10 flex flex-col items-center justify-center gap-5">
-    <h2 class="text-center text-xl md:text-3xl lg:w-1/2">
-      Se você quer receber artigos como esse e outras novidades em primeira mão,
-      se inscreva na nossa <span class="text-blue-500">Newsletter</span>!
-    </h2>
-    <NewsletterForm client:load />
+  <hr class="mx-auto my-5 w-1/2 border-slate-200" />
+  <section class="py-12 md:py-16">
+    <div class="mx-5 md:mx-auto md:max-w-4xl flex flex-col items-center justify-center gap-8">
+      <h2 class="text-center text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900">
+        Se você quer receber artigos como esse e outras novidades em primeira mão,
+        se inscreva na nossa <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">Newsletter</span>!
+      </h2>
+      <NewsletterForm client:load />
+    </div>
   </section>
 </Layout>

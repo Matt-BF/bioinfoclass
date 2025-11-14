@@ -82,7 +82,7 @@ export default function NewsletterForm() {
         />
         <input
           {...register("name")}
-          className="rounded-lg p-2 focus:outline-purple-400"
+          className="rounded-lg p-2 focus:outline-cyan-400"
           placeholder="Seu nome"
         />
         {errors.name && (
@@ -92,7 +92,7 @@ export default function NewsletterForm() {
         )}
         <input
           {...register("email")}
-          className="rounded-lg p-2 focus:outline-purple-400"
+          className="rounded-lg p-2 focus:outline-cyan-400"
           placeholder="Seu email"
         />
         {errors.email && (
@@ -114,7 +114,7 @@ export default function NewsletterForm() {
         )}
       </div>
       <input
-        className="rounded-lg bg-purple-400 p-2 text-white hover:cursor-pointer hover:bg-purple-300 "
+        className="rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 p-2 text-white font-semibold hover:cursor-pointer hover:from-cyan-600 hover:to-blue-600 transition-all duration-300"
         type="submit"
         value="Enviar"
       />

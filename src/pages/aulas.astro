@@ -1,11 +1,6 @@
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-
-import matt from "../images/matt.webp";
-import lucao from "../images/lucao.jpg";
-import jujose from "../images/jujose.jpg";
-import Instructor from "../components/Instructor.astro";
 import { Icon } from "astro-icon";
 import ContactForm from "../components/ContactForm";
 ---
@@ -15,13 +10,11 @@ import ContactForm from "../components/ContactForm";
   description="Aprenda bioinformática e programação com aulas particulares personalizadas na Bioinfoclass. Professores experientes e metodologia eficiente para alunos de todos os níveis. Comece já sua jornada de aprendizado em análise de dados biológicos e programação!"
 >
   <main>
-    <section class="flex flex-col items-center justify-center">
-      <h1 class="mb-20 mt-5 text-center text-3xl">
-        Aprenda no seu ritmo e de forma <span class="text-blue-500"
-          >personalizada</span
-        >
+    <section class="flex flex-col items-center justify-center py-12">
+      <h1 class="mb-12 text-center text-4xl md:text-5xl font-bold text-slate-900">
+        Aprenda no seu ritmo e de forma <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">personalizada</span>
       </h1>
-      <p class="mx-10 mb-10 text-justify text-lg lg:w-1/2">
+      <p class="mx-10 mb-10 text-justify text-lg leading-relaxed lg:w-1/2 text-slate-700">
         Sabemos que cursos online e videoaulas podem não ser a melhor opção para
         todos. Acreditamos que cada um tem sua maneira própria de aprender e que
         o cuidado individual pode render muitos frutos para quem está iniciando
@@ -33,98 +26,69 @@ import ContactForm from "../components/ContactForm";
         computacional para sua pesquisa.
       </p>
     </section>
-    <section class="mx-5 mt-10 grid gap-32 lg:mx-32 lg:grid-cols-3">
+    <section class="mx-5 mt-12 grid gap-6 md:gap-8 lg:mx-32 lg:grid-cols-3 lg:gap-12">
       <Card icon="ic:outline-access-time">
         <h3 class="text-center">
-          Aprenda no seu <span class="text-blue-500">ritmo</span> e apenas o que
+          Aprenda no seu <span class="text-cyan-500">ritmo</span> e apenas o que
           você necessita
         </h3>
       </Card>
       <Card icon="mdi:attach-money">
         <h3 class="text-center">
-          Preços <span class="text-blue-500">justos</span> e transparentes
+          Preços <span class="text-cyan-500">justos</span> e transparentes
         </h3>
       </Card>
       <Card icon="mdi:graduation-cap">
         <h3 class="text-center">
-          Instrutores <span class="text-blue-500">experientes</span>, altamente
+          Instrutores <span class="text-cyan-500">experientes</span>, altamente
           qualificados e didáticos
         </h3>
       </Card>
     </section>
 
-    <!-- Instructors -->
-    <section>
-      <h2 class="mt-20 text-center text-3xl">
-        Conheça alguns dos nossos <span class="text-blue-500">instrutores</span>
-      </h2>
-      <div class="mx-10 mt-10 grid gap-10 md:mx-24 lg:grid-cols-2">
-        <Instructor
-          name="Mateus"
-          image={matt}
-          specialties="Python, APIs, Genômica Comparativa, Machine Learning, Automação, Sequenciamento"
-          github="https://github.com/Matt-BF"
-          lattes="http://lattes.cnpq.br/9005713927447046"
-        />
-        <Instructor
-          name="Lucas"
-          image={lucao}
-          specialties="R, Python, Integração de ômicas, Bioestatística, RNA-Seq, Simulação Metabólica, Análise de Redes"
-          github="https://github.com/lmigueel"
-          lattes="http://lattes.cnpq.br/4611692798738135"
-        />
-        <Instructor
-          name="Juliana"
-          image={jujose}
-          specialties="Genômica Comparativa, Filogenômica, Variant Calling, RNA-Seq, Pipelines de automação, Bash"
-          github="https://github.com/julianajose"
-          lattes="http://lattes.cnpq.br/0160738837670103"
-        />
-      </div>
-    </section>
     <!-- How does it work? -->
-    <section class="my-20">
-      <h2 class="text-center text-3xl">
-        Como <span class="text-blue-500">agendar</span> uma aula?
+    <section class="py-12 md:py-16">
+      <h2 class="text-center text-4xl md:text-5xl font-bold text-slate-900 mb-12">
+        Como <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">agendar</span> uma aula?
       </h2>
       <div class="mt-10 flex flex-col justify-center gap-16">
         <div
-          class="mx-5 flex flex-col items-center gap-5 rounded-lg border border-purple-400 p-5 text-center lg:mx-auto lg:w-1/4"
+          class="mx-5 flex flex-col items-center gap-5 rounded-lg border-2 border-cyan-400 bg-cyan-400/5 p-6 text-center lg:mx-auto lg:w-1/4"
         >
           <Icon
-            class="w-24 rounded-full bg-purple-400 p-5 text-white"
+            class="w-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 p-5 text-white"
             name="mdi:file-document-edit"
-          />Preencha o formulário com seu nome, email de contato, uma descrição
+          />
+          <p class="text-slate-700">Preencha o formulário com seu nome, email de contato, uma descrição
           da sua experiência, disponibilidade de horários e o que você gostaria
-          de aprender
+          de aprender</p>
         </div>
 
         <div
-          class="mx-5 flex flex-col items-center gap-5 rounded-lg border border-purple-400 p-5 text-center lg:mx-auto lg:w-1/4"
+          class="mx-5 flex flex-col items-center gap-5 rounded-lg border-2 border-cyan-400 bg-cyan-400/5 p-6 text-center lg:mx-auto lg:w-1/4"
         >
           <Icon
-            class="w-24 rounded-full bg-purple-400 p-5 text-white"
+            class="w-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 p-5 text-white"
             name="ic:outline-assignment-return"
           />
-          Enviaremos um plano de estudos com tempo estimado, sugestão de instrutor
-          e investimento
+          <p class="text-slate-700">Enviaremos um plano de estudos com tempo estimado, sugestão de instrutor
+          e investimento</p>
         </div>
         <div
-          class="mx-5 flex flex-col items-center gap-5 rounded-lg border border-purple-400 p-5 text-center lg:mx-auto lg:w-1/4"
+          class="mx-5 flex flex-col items-center gap-5 rounded-lg border-2 border-cyan-400 bg-cyan-400/5 p-6 text-center lg:mx-auto lg:w-1/4"
         >
           <Icon
-            class="w-24 rounded-full bg-purple-400 p-5 text-white"
+            class="w-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 p-5 text-white"
             name="mdi:calendar-check"
-          />Após o aceite das condições, enviaremos o link para aula e convites
-          na agenda
+          />
+          <p class="text-slate-700">Após o aceite das condições, enviaremos o link para aula e convites
+          na agenda</p>
         </div>
       </div>
     </section>
-    <section class="my-20">
-      <h2 class="mb-10 text-center text-3xl">
-        Quer aprender conosco? Preencha o <span class="text-blue-500"
-          >formulário</span
-        > de contato!
+    <section class="py-12 md:py-16">
+      <h2 class="mb-12 text-center text-4xl md:text-5xl font-bold text-slate-900">
+        Quer aprender conosco? Preencha o <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">formulário</span> de contato!
       </h2>
       <ContactForm client:load />
     </section>
