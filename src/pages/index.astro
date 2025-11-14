@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
 import matt from "../images/matt.webp";
+import heroImage from "../images/bioinfo-hero.jpg";
 import { Icon } from "astro-icon";
 import NewsletterForm from "../components/NewsletterForm";
 ---
@@ -14,8 +15,8 @@ import NewsletterForm from "../components/NewsletterForm";
   <main>
     <!-- Hero section -->
     <section
-      class="relative flex h-[85vh] items-center justify-center overflow-hidden bg-[url('/src/images/bioinfo-hero.jpg')] bg-cover bg-blend-multiply"
-      style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(30, 58, 138, 0.6)), url('/src/images/bioinfo-hero.jpg'); background-size: cover, cover;"
+      class="relative flex h-[85vh] items-center justify-center overflow-hidden bg-cover bg-blend-multiply"
+      style={`background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(30, 58, 138, 0.6)), url('${heroImage.src}'); background-size: cover, cover;`}
     >
       <!-- Additional gradient overlay for better text contrast -->
       <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-blue-950/40"></div>
